@@ -1,11 +1,11 @@
 const Nav = () => {
   return (
-    <nav className='flex flex-col items-center absolute top-8 left-8'>
-      <img src='assets/tco-logo.png' alt='tco-logo' className='w-10' />
+    <nav className='flex flex-col items-center absolute top-8 left-4 md:top-8 md:left-8'>
+      <img src='/images/tco-logo.png' alt='tco-logo' className='w-6 md:w-10' />
       <span>
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='h-10 w-10 text-white'
+          className='h-6 w-6 md:h-10 md:w-10 text-white'
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'

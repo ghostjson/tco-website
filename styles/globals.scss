@@ -4,11 +4,7 @@
 
 @layer base {
   @font-face {
-    font-family: AGaramondPro;
-    src: url(/fonts/AGaramondPro-Regular.otf) format('otf');
-  }
-  @font-face {
-    font-family: calibri;
-    src: url(/fonts/Calibri.ttf) format('ttf');
+    font-family: 'Calibri';
+    src: url('/fonts/Calibri.ttf');
   }
 }

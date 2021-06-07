@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        agaramondPro: ['AGaramondPro'],
-        calibri: ['calibri'],
+        agaramondPro: ['AGaramon Pro'],
+        calibri: ['Calibri'],
       },
     },
   },
