@@ -10,16 +10,16 @@ export default function Home() {
     <Layout>
       <div>
         <main className='overflow-x-hidden'>
-          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[50vh] flex items-start justify-center pt-12  md:pt-24 relative'>
+          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[50vh] md:min-h-[55vh] xl:min-h-[60vh]  flex items-start justify-center pt-12  md:pt-24 relative'>
             <img
               src='/images/main-logo.png'
               alt='main-logo'
-              className='h-8 md:h-16'
+              className='h-10 md:h-14'
             />
             <svg
               height='15'
               width='inherit'
-              className='absolute bottom-0 left-0 w-full'
+              className='absolute -bottom-1 left-0 w-full'
             >
               <path
                 d='M 00 15 q 200 -20 2000 0'
@@ -31,18 +31,18 @@ export default function Home() {
             <img
               src='/illustrations/illus-bgline.svg'
               alt='illustration background stroke line'
-              className='absolute -bottom-1 right-0 w-[48rem] z-10'
+              className='absolute -bottom-1.5  right-0 w-[48rem] z-10'
             />
             <img
               src='/illustrations/Untitled.svg'
               alt='women meditating'
               className='absolute -bottom-1/4 right-0 w-[40rem] z-20'
             />
-            <Pill className='bg-[#E0E3D2] text-xs md:text-base absolute left-0 md:right-2/3 px-2 py-1 md:px-4 md:left-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
+            <Pill className='bg-[#E0E3D2] text-xs md:text-base absolute left-0 md:right-2/3 px-1.5 py-1 md:px-4 md:left-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
               Hello, How May I Help You?
             </Pill>
           </div>
-          <div className='h-auto xl:min-h-[50vh] bg-white relative flex flex-col xl:flex-row-reverse py-36 xl:py-24 px-6 md:px-16 justify-between space-y-8'>
+          <div className='h-auto bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-48 py-16 px-6 md:px-16 justify-between space-y-8'>
             <UserActions className='self-center' />
             <p className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'>
               Welcome to The Creative Oracle! We are creatives that are

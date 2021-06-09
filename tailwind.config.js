@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        xl: '1200px',
+      },
       fontFamily: {
         agaramondPro: ['AGaramon Pro'],
         calibri: ['Calibri'],
