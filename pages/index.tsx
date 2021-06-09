@@ -1,48 +1,50 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import Pill from '../components/Pill';
 import SocialIconBar from '../components/SocialIconBar';
+import UserActions from '../components/UserActions';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   return (
     <Layout>
       <div>
-        <main className='min-h-screen'>
-          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[50vh] flex items-start justify-center pt-12  md:pt-24'>
+        <main className='overflow-x-hidden'>
+          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[50vh] flex items-start justify-center pt-12  md:pt-24 relative'>
             <img
               src='/images/main-logo.png'
               alt='main-logo'
               className='h-8 md:h-16'
             />
-          </div>
-          <div className='h-auto xl:min-h-[50vh] pt-32 md:pt-80 xl:pt-0 bg-white relative'>
-            <div className='absolute top-3 right-1/2 translate-x-[48%] xl:translate-x-0 xl:right-0 transform -translate-y-1/2 w-[50rem] flex flex-col items-center'>
-              <img
-                src='/illustrations/women-illustration.svg'
-                alt='women meditating'
-                className=''
+            <svg
+              height='15'
+              width='inherit'
+              className='absolute bottom-0 left-0 w-full'
+            >
+              <path
+                d='M 00 15 q 200 -20 2000 0'
+                stroke='#b4c3d0'
+                stroke-width='5'
+                fill='white'
               />
-              <div className='text-sm hidden xl:block'>
-                <span>I want to:</span>
-                <div className='flex space-x-6 text-white'>
-                  <span className='py-1 px-6 bg-[#A5904F] rounded-full'>
-                    Engage your services
-                  </span>
-                  <span className='py-1 px-6 bg-[#A5904F] rounded-full'>
-                    Browse this site
-                  </span>
-                  <span className='py-1 pl-10 px-6 bg-[#A5904F] rounded-xl relative'>
-                    <img
-                      src='/icons/whatsapp-legacy.svg'
-                      alt='whatsapp chat icon'
-                      className='w-8 absolute -left-1 top-1/2 transform -translate-y-1/2'
-                    />
-                    Chat
-                  </span>
-                </div>
-              </div>
-            </div>
-            <p className='font-agaramondPro md:text-xl w-full xl:w-1/2 p-8 md:p-32 text-center xl:text-left'>
+            </svg>
+            <img
+              src='/illustrations/illus-bgline.svg'
+              alt='illustration background stroke line'
+              className='absolute -bottom-1 right-0 w-[48rem] z-10'
+            />
+            <img
+              src='/illustrations/Untitled.svg'
+              alt='women meditating'
+              className='absolute -bottom-1/4 right-0 w-[40rem] z-20'
+            />
+            <Pill className='bg-[#E0E3D2] text-xs md:text-base absolute left-0 md:right-2/3 px-2 py-1 md:px-4 md:left-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
+              Hello, How May I Help You?
+            </Pill>
+          </div>
+          <div className='h-auto xl:min-h-[50vh] bg-white relative flex flex-col xl:flex-row-reverse py-36 xl:py-24 px-6 md:px-16 justify-between space-y-8'>
+            <UserActions className='self-center' />
+            <p className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'>
               Welcome to The Creative Oracle! We are creatives that are
               passionate about design & consultants that practice sound business
               & marketing principles. We are inspired by both beauty and wisdom,
@@ -52,16 +54,25 @@ export default function Home() {
               & good design yeilds tangible results. Connect with us to get to
               know more about us.
             </p>
+            <Pill className='bg-[#A5904F] relative px-6 pl-10 self-center text-white text-sm xl:hidden'>
+              <img
+                src='/icons/whatsapp-legacy.svg'
+                alt='whatsapp chat icon'
+                className='w-10 absolute -left-1 top-1/2 transform -translate-y-1/2'
+              />
+              Chat
+            </Pill>
           </div>
         </main>
         <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-8 text-justify font-calibri'>
           <div className='flex justify-center xl:justify-between'>
-            <h2 className='text-4xl uppercase tracking-wide py-2 border-b border-white'>
+            <h2 className='text-4xl uppercase tracking-wide py-2 relative'>
               Why Us
+              <span className='h-[2px] bg-white absolute bottom-0 w-3/4 left-1/2 transform -translate-x-1/2 rounded-full'></span>
             </h2>
             <SocialIconBar className='hidden xl:flex' />
           </div>
-          <p className='text-2xl tracking-wide'>
+          <p className='text-lg md:text-2xl tracking-wide'>
             The Creative Oracle understands both your business & design needs.
             We are specialised in helping businesses achieve their business
             goals through visual strategies.
