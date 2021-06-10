@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import Pill from '../components/Pill';
 import SocialIconBar from '../components/SocialIconBar';
 import UserActions from '../components/UserActions';
-import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   return (
