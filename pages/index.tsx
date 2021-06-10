@@ -41,7 +41,7 @@ export default function Home() {
               Hello, How May I Help You?
             </Pill>
           </div>
-          <div className='h-auto bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-48 py-16 px-6 md:px-16 justify-between space-y-8'>
+          <div className='h-auto bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-24 py-16 px-6 md:px-16 justify-between space-y-8'>
             <UserActions className='self-center' />
             <p className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'>
               Welcome to The Creative Oracle! We are creatives that are
@@ -53,14 +53,19 @@ export default function Home() {
               & good design yeilds tangible results. Connect with us to get to
               know more about us.
             </p>
-            <Pill className='bg-[#A5904F] relative px-6 pl-10 self-center text-white text-sm xl:hidden'>
-              <img
-                src='/icons/whatsapp-legacy.svg'
-                alt='whatsapp chat icon'
-                className='w-10 absolute -left-1 top-1/2 transform -translate-y-1/2'
-              />
-              Chat
-            </Pill>
+            <a
+              href='https://api.whatsapp.com/send?phone=6583337803'
+              className='self-center xl:hidden'
+            >
+              <Pill className='bg-gray-800 rounded-xl relative px-6 pl-10 text-white text-sm xl:hidden'>
+                <img
+                  src='/icons/whatsapp-legacy.svg'
+                  alt='whatsapp chat icon'
+                  className='w-10 absolute -left-1 top-1/2 transform -translate-y-1/2'
+                />
+                Chat
+              </Pill>
+            </a>
           </div>
         </main>
         <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-8 text-justify font-calibri'>
