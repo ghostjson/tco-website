@@ -9,7 +9,7 @@ const Marketing = () => {
         className='h-[40vh] xl:h-[50vh] relative flow-root '
         style={{
           background:
-            'linear-gradient(223.76deg, #C96226 6.81%, #CD8334 89.5%);',
+            'linear-gradient(223.76deg, #C96226 6.81%, #CD8334 89.5%)',
         }}
       >
         <img
@@ -46,7 +46,7 @@ const Marketing = () => {
               'Select template & download. (Editable artwork in PSD/EPS/PPT or DOC format).',
             ]}
           />
-          <div className='h-96 w-0.5 bg-[#3A7B99] mx-6 self-end'></div>
+          <div className='h-96 w-1 bg-[#BCD5DA] mx-6 self-end'></div>
           <PriceChart
             color='#27566C'
             price='350'
@@ -65,8 +65,7 @@ const Marketing = () => {
       <div
         className='text-white p-16 px-8 xl:px-24 text-justify font-calibri font-regular'
         style={{
-          background:
-            'linear-gradient(43.38deg, #C96226 6.81%, #CD8334 89.5%);',
+          background: 'linear-gradient(43.38deg, #C96226 6.81%, #CD8334 89.5%)',
         }}
       >
         <div className='flex justify-center xl:justify-between mb-0'>
