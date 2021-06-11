@@ -23,7 +23,7 @@ export default function Home() {
               <path
                 d='M 00 15 q 200 -20 2000 0'
                 stroke='#b4c3d0'
-                stroke-width='5'
+                strokeWidth='5'
                 fill='white'
               />
             </svg>
