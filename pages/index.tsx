@@ -1,8 +1,28 @@
-import Head from 'next/head';
+import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import Pill from '../components/Pill';
 import SocialIconBar from '../components/SocialIconBar';
 import UserActions from '../components/UserActions';
+
+let easing = [0.175, 0.85, 0.42, 0.96];
+
+const variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.75,
+    transition: { duration: 0.7, ease: easing },
+  },
+  visible: { opacity: 1, scale: 1 },
+};
+
+const textVariants = {
+  exit: { y: 50, opacity: 0, transition: { duration: 0.5, ease: easing } },
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: { delay: 0.1, duration: 0.5, ease: easing },
+  },
+};
 
 export default function Home() {
   return (
@@ -10,7 +30,10 @@ export default function Home() {
       <div>
         <main className='overflow-x-hidden'>
           <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[50vh] md:min-h-[55vh] xl:min-h-[60vh]  flex items-start justify-center pt-12  md:pt-24 relative'>
-            <img
+            <motion.img
+              initial='hidden'
+              animate='visible'
+              variants={variants}
               src='/images/main-logo.png'
               alt='main-logo'
               className='h-8 md:h-14'
@@ -32,7 +55,10 @@ export default function Home() {
               alt='illustration background stroke line'
               className='absolute -bottom-1.5  right-0 w-[48rem] z-10'
             />
-            <img
+            <motion.img
+              initial='hidden'
+              animate='visible'
+              variants={variants}
               src='/illustrations/Untitled.svg'
               alt='women meditating'
               className='absolute -bottom-1/4 right-0 w-[40rem] z-20'
@@ -43,7 +69,13 @@ export default function Home() {
           </div>
           <div className='h-auto bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-24 py-16 px-6 md:px-16 justify-between space-y-8'>
             <UserActions className='self-center' />
-            <p className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'>
+            <motion.p
+              initial='exit'
+              animate='enter'
+              exit='exit'
+              variants={textVariants}
+              className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'
+            >
               Welcome to The Creative Oracle! We are creatives that are
               passionate about design & consultants that practice sound business
               & marketing principles. We are inspired by both beauty and wisdom,
@@ -52,7 +84,7 @@ export default function Home() {
               firmly believe in the design principle that form follows function
               & good design yeilds tangible results. Connect with us to get to
               know more about us.
-            </p>
+            </motion.p>
             <a
               href='https://api.whatsapp.com/send?phone=6583337803'
               className='self-center xl:hidden'
