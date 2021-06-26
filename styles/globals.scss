@@ -8,3 +8,7 @@
     src: url('/fonts/Calibri.ttf');
   }
 }
+
+img {
+  @apply select-none;
+}

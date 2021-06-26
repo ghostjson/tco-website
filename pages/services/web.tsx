@@ -9,12 +9,17 @@ const Web = () => {
         <img
           src='/images/main-logo.png'
           alt='main-logo'
-          className='mt-14 mx-auto md:mt-16 h-6 md:h-10  md:ml-20'
+          className='mt-14 mx-auto md:mt-16 h-6 md:h-10  md:ml-20 z-10'
         />
         <img
           src='/illustrations/web-banner.svg'
           alt='web banner'
-          className='absolute -bottom-10 md:-bottom-20 xl:-bottom-36'
+          className='absolute -bottom-10 md:-bottom-20 xl:-bottom-36 hidden md:block'
+        />
+        <img
+          src='/illustrations/web-banner.gif'
+          alt='web banner'
+          className='absolute -bottom-10 md:-bottom-20 xl:-bottom-36 right-0 bg-repeat md:hidden -z-10'
         />
       </div>
       <div className='mt-[10vh] xl:mt-[10vh] flex flex-col items-center p-4 xl:p-16'>
@@ -75,7 +80,7 @@ const Web = () => {
         <p className='mt-6 text-lg md:text-xl'>
           This custom package may include a combination of designs suchh as
           strategic logo design, buiseness card & letterhead design, premiums,
-          corporate invoice, slaes materials, packaging design, POS display &
+          corporate invoice, sales materials, packaging design, POS display &
           social media graphics
         </p>
         <p className='mt-6 text-lg md:text-xl'>
