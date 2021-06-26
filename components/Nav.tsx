@@ -58,13 +58,21 @@ const NavLinks = [
     path: '/',
   },
   {
-    name: 'Services',
-    path: '/services',
+    name: 'Services - Brand',
+    path: '/services/branding',
   },
   {
-    name: 'Contact',
-    path: '/contact',
+    name: 'Services - Marketing',
+    path: '/services/marketing',
   },
+  {
+    name: 'Services - Web',
+    path: '/services/web',
+  },
+  // {
+  //   name: 'Contact',
+  //   path: '/contact',
+  // },
 ];
 
 export default Nav;
