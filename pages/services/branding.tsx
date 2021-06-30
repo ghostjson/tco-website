@@ -5,7 +5,7 @@ import SocialIconBar from '../../components/SocialIconBar';
 const Branding = () => {
   return (
     <Layout>
-      <div className='h-[30vh] md:h-[40vh] xl:h-[80vh] relative flow-root bg-gradient-to-t from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
+      <div className='h-[60vh] md:h-[40vh] xl:h-[80vh] relative flow-root bg-gradient-to-t from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
         <img
           src='/images/main-logo.png'
           alt='main-logo'
@@ -14,17 +14,22 @@ const Branding = () => {
         <img
           src='/illustrations/branding-banner.svg'
           alt='branding banner'
-          className='absolute -bottom-10 md:-bottom-20 xl:-bottom-50'
+          className='absolute hidden md:block -bottom-10 md:-bottom-20 xl:-bottom-50'
+        />
+        <img
+          src='/illustrations/branding-banner.gif'
+          alt='web banner'
+          className='absolute top-20  right-0 bg-repeat md:hidden -z-10'
         />
       </div>
-      <div className='mt-[10vh] xl:mt-0 flex flex-col items-center p-4 xl:p-16'>
-        <span className='relative py-2'>
-          <h2 className='text-4xl uppercase font-semibold text-[#3E7F6E] text-center'>
+      <div className='mt-[10vh] xl:mt-0 flex flex-col items-center p-4 xl:p-16 bg-white z-10'>
+        <span className='relative py-2 bg-white'>
+          <h2 className='text-4xl uppercase font-semibold text-[#3E7F6E] text-center '>
             Brand Design
           </h2>
           <div className='absolute h-0.5 w-1/4 bottom-0 bg-[#3E7F6E] left-1/2 transform -translate-x-1/2 rounded-full'></div>
         </span>
-        <p className='text-lg xl:text-xl text-center mt-2 text-[#3E7F6E]'>
+        <p className='text-lg xl:text-xl text-center mt-0  pt-10 z-10 bg-white text-[#3E7F6E]'>
           We create brand identities that shape consumer perception of your
           brand to help you stand out from your competitors.
         </p>

@@ -10,8 +10,7 @@ const Marketing = () => {
         style={{
           background:
             'linear-gradient(223.76deg, #C96226 6.81%, #CD8334 89.5%)',
-        }}
-      >
+        }}>
         <img
           src='/images/main-logo.png'
           alt='main-logo'
@@ -20,10 +19,15 @@ const Marketing = () => {
         <img
           src='/illustrations/marketing-banner.svg'
           alt='marketing banner'
-          className='absolute -bottom-20 md:-bottom-1/4 xl:bottom-auto xl:top-[20%]'
+          className='absolute hidden md:block md:-bottom-1/4 xl:bottom-auto xl:top-[20%]'
+        />
+        <img
+          src='/illustrations/marketing-banner.gif'
+          alt='web banner'
+          className='absolute top-10  right-0 bg-repeat md:hidden -z-10'
         />
       </div>
-      <div className='mt-[20vh] xl:mt-[45vh] flex flex-col items-center p-4 xl:p-16'>
+      <div className='mt-[30vh] xl:mt-[45vh] flex flex-col items-center p-4 xl:p-16'>
         <span className='relative py-2'>
           <h2 className='text-4xl uppercase font-semibold text-[#3A7A98] text-center'>
             Marketing Design
@@ -66,8 +70,7 @@ const Marketing = () => {
         className='text-white p-8 px-8 xl:px-24 text-justify font-calibri font-regular'
         style={{
           background: 'linear-gradient(43.38deg, #C96226 6.81%, #CD8334 89.5%)',
-        }}
-      >
+        }}>
         <div className='flex justify-left xl:justify-between mb-0'>
           <h2 className='text-4xl uppercase tracking-wide'>Custom Artwork</h2>
           <SocialIconBar className='hidden xl:flex' />
