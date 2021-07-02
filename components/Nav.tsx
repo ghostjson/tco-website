@@ -24,8 +24,7 @@ const Nav = () => {
           viewBox='0 0 24 24'
           stroke='currentColor'
           onClick={() => setShowNav(!showNav)}
-          onBlur={() => setShowNav(false)}
-        >
+          onBlur={() => setShowNav(false)}>
           <path
             strokeLinecap='round'
             strokeLinejoin='round'
@@ -38,8 +37,7 @@ const Nav = () => {
             showNav ? '' : 'hidden'
           }`}
           initial={{ y: 10, opacity: 0 }}
-          animate={showNav ? { opacity: 1, y: 0 } : {}}
-        >
+          animate={showNav ? { opacity: 1, y: 0 } : {}}>
           {NavLinks.map((link, index) => {
             return (
               <Link href={link.path} key={index}>
@@ -56,6 +54,10 @@ const NavLinks = [
   {
     name: 'Home',
     path: '/',
+  },
+  {
+    name: 'Services',
+    path: '/services',
   },
   {
     name: 'Services - Brand',

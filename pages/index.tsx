@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import Layout from '../components/Layout';
-import Pill from '../components/Pill';
-import SocialIconBar from '../components/SocialIconBar';
-import UserActions from '../components/UserActions';
+import Layout from '@components/Layout';
+import Pill from '@components/Pill';
+import SocialIconBar from '@components/SocialIconBar';
+import UserActions from '@components/UserActions';
 
 let easing = [0.175, 0.85, 0.42, 0.96];
 
@@ -41,8 +41,7 @@ export default function Home() {
             <svg
               height='15'
               width='inherit'
-              className='absolute -bottom-1 left-0 w-full'
-            >
+              className='absolute -bottom-1 left-0 w-full'>
               <path
                 d='M 00 15 q 200 -20 2000 0'
                 stroke='#b4c3d0'
@@ -74,8 +73,7 @@ export default function Home() {
               animate='enter'
               exit='exit'
               variants={textVariants}
-              className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'
-            >
+              className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'>
               Welcome to The Creative Oracle! We are creatives that are
               passionate about design & consultants that practice sound business
               & marketing principles. We are inspired by both beauty and wisdom,
@@ -87,8 +85,7 @@ export default function Home() {
             </motion.p>
             <a
               href='https://api.whatsapp.com/send?phone=6583337803'
-              className='self-center xl:hidden'
-            >
+              className='self-center xl:hidden'>
               <Pill className='bg-gray-800 rounded-xl relative px-6 pl-10 text-white text-sm xl:hidden'>
                 <img
                   src='/icons/whatsapp-legacy.svg'

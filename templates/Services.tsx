@@ -1,9 +1,14 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import SocialIconBar from '../components/SocialIconBar';
 import PriceChart from '../components/PriceChart';
 
-const Services: React.FC = () => {
+const Services = ({ children }) => {
+  const banner = React.Children.map(children, (child) =>
+    child.type.displayName === 'Banner' ? child : null
+  );
+
   return (
     <Layout>
       <div className='h-[30vh] md:h-[40vh] xl:h-[60vh] relative flow-root bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F]'>
@@ -12,7 +17,7 @@ const Services: React.FC = () => {
           alt='main-logo'
           className='mt-14 mx-auto md:mt-16 h-6 md:h-10  md:ml-20 z-10'
         />
-        <img
+        {/* <img
           src='/illustrations/web-banner.svg'
           alt='web banner'
           className='absolute -bottom-10 md:-bottom-20 xl:-bottom-36 hidden md:block'
@@ -21,7 +26,8 @@ const Services: React.FC = () => {
           src='/illustrations/web-banner.gif'
           alt='web banner'
           className='absolute -bottom-10 md:-bottom-20 xl:-bottom-36 right-0 bg-repeat md:hidden -z-10'
-        />
+        /> */}
+        {banner}
       </div>
       <div className='mt-[10vh] xl:mt-[10vh] flex flex-col items-center p-4 xl:p-16'>
         <span className='relative py-2'>
@@ -93,3 +99,7 @@ const Services: React.FC = () => {
   );
 };
 export default Services;
+
+const Banner = ({ children }) => children;
+Banner.displayName = 'Banner';
+Services.Banner = Banner;

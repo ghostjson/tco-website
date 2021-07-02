@@ -1,6 +1,6 @@
-import Layout from '../../components/Layout';
-import PriceChart from '../../components/PriceChart';
-import SocialIconBar from '../../components/SocialIconBar';
+import Layout from '@components/Layout';
+import PriceChart from '@components/PriceChart';
+import SocialIconBar from '@components/SocialIconBar';
 
 const Web = () => {
   return (
