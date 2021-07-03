@@ -58,9 +58,9 @@ export default function Home() {
               initial='hidden'
               animate='visible'
               variants={variants}
-              src='/illustrations/Untitled.svg'
+              src='/illustrations/women-illustration.png'
               alt='women meditating'
-              className='absolute -bottom-1/4 right-0 w-[40rem] z-20'
+              className='absolute -bottom-1/4 xl:-bottom-52 right-0 w-[40rem] z-20'
             />
             <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-0 md:right-2/3 px-[.5rem] py-0.5 md:px-4 md:left-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
               Hello, How May I Help You?

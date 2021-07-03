@@ -103,8 +103,14 @@ const Services = () => {
           </ServiceItem>
         </div>
       </div>
-      <div className='pt-20 pb-16 px-2 flex flex-col items-center'>
-        <div className='bg-gray-300 w-full h-64'></div>
+      <div className='pt-32 pb-16 px-2 flex flex-col items-center'>
+        <div className='w-full h-56 cover'>
+          <img
+            src='/illustrations/resource-women.jpg'
+            alt=''
+            className='h-full mx-auto items-center'
+          />
+        </div>
         <h4 className='text-[1.7rem] font-bold text-center uppercase w-full'>
           The New Normal Economy
         </h4>
