@@ -1,0 +1,29 @@
+import SocialIconBar from './SocialIconBar';
+
+type ServiceFooter = {
+  children: React.ReactNode;
+  title: string;
+  price: string | number;
+  className: string;
+};
+
+const ServiceFooter = ({ children, title, price, className }) => {
+  return (
+    <footer
+      className={`text-white p-8  xl:p-24  text-justify font-calibri font-regular ${
+        className ? className : ''
+      }`}>
+      <div className='flex justify-left xl:justify-between mb-0'>
+        <h2 className='text-4xl uppercase tracking-wide text-left'>{title}</h2>
+        <SocialIconBar className='hidden xl:flex' />
+      </div>
+      <div className='uppercase text-xl xl:text-2xl -mt-2'>From ${price}</div>
+      <section className='text-lg md:text-xl tracking-wide mt-6 xl:w-10/12'>
+        {children}
+      </section>
+      <SocialIconBar className='flex xl:hidden justify-end mt-6' />
+    </footer>
+  );
+};
+
+export default ServiceFooter;

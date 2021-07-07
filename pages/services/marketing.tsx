@@ -1,6 +1,6 @@
 import Layout from '@components/Layout';
 import PriceChart from '@components/PriceChart';
-import SocialIconBar from '@components/SocialIconBar';
+import ServiceFooter from '@components/ServiceFooter';
 
 const Marketing = () => {
   return (
@@ -66,25 +66,19 @@ const Marketing = () => {
           />
         </div>
       </div>
-      <div
-        className='text-white p-8 px-8 xl:px-24 text-justify font-calibri font-regular'
-        style={{
-          background: 'linear-gradient(43.38deg, #C96226 6.81%, #CD8334 89.5%)',
-        }}>
-        <div className='flex justify-left xl:justify-between mb-0'>
-          <h2 className='text-4xl uppercase tracking-wide'>Custom Artwork</h2>
-          <SocialIconBar className='hidden xl:flex' />
-        </div>
-        <div className='uppercase text-xl xl:text-2xl -mt-2'>From $750</div>
-        <p className='text-lg md:text-xl tracking-wide mt-6 xl:w-10/12'>
+      {/* footer  */}
+      <ServiceFooter
+        className='bg-gradient-to-br from-[#C96226] to-[#CD8334]'
+        title='Custom ArtWork'
+        price='750'>
+        <p>
           A custom artwork is suitable for organizations that have specifiic
           themes or concepts to convey to their audiences. It is also ideal for
           businesses that want to sell to customers effectively like running
           online campaigns or marketing events.
         </p>
         <p className='mt-6 md:text-xl'>Contact us for more information.</p>
-        <SocialIconBar className='flex xl:hidden justify-end mt-6' />
-      </div>
+      </ServiceFooter>
     </Layout>
   );
 };

@@ -1,6 +1,6 @@
 import Layout from '@components/Layout';
 import PriceChart from '@components/PriceChart';
-import SocialIconBar from '@components/SocialIconBar';
+import ServiceFooter from '@components/ServiceFooter';
 
 const Branding = () => {
   return (
@@ -64,15 +64,12 @@ const Branding = () => {
           />
         </div>
       </div>
-      <div className='text-white p-8 px-8 xl:px-24 text-justify font-calibri font-regular bg-gradient-to-tr from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
-        <div className='flex justify-left xl:justify-between mb-0'>
-          <h2 className='text-4xl uppercase tracking-wide text-left'>
-            Custom Brand Identity
-          </h2>
-          <SocialIconBar className='hidden xl:flex' />
-        </div>
-        <div className='uppercase text-xl xl:text-2xl -mt-2'>From $750</div>
-        <p className='text-lg md:text-xl tracking-wide mt-6 xl:w-10/12'>
+      {/* footer  */}
+      <ServiceFooter
+        className='bg-gradient-to-tr from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'
+        title='Custom Brand Identity'
+        price='750'>
+        <p>
           A custom brand identity design is suitable form buisness targeting end
           consumers especially in F&B, online and offline retail & services with
           string competition
@@ -86,8 +83,7 @@ const Branding = () => {
         <p className='mt-6 text-lg md:text-xl'>
           Contact us for more information.
         </p>
-        <SocialIconBar className='flex xl:hidden justify-end mt-6' />
-      </div>
+      </ServiceFooter>
     </Layout>
   );
 };
