@@ -14,14 +14,14 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`bg-white absolute z-50 top-0 left-0 w-3/4 h-screen flex flex-col space-y-2 pt-32 transform transition-all ${
+        className={`bg-white absolute z-50 top-0 left-0 w-3/4 md:w-1/2 h-screen flex flex-col pt-32 transform transition-all ${
           showNav ? '' : '-translate-x-full'
         }`}>
         {NavLinks.map((link, index) => {
           return (
             <Link href={link.path} key={index}>
               <a
-                className='capitalize cursor-pointer p-4 text-lg font-semibold'
+                className='capitalize cursor-pointer p-4 md:px-8 text-lg font-semibold'
                 onClick={() => setShowNav(!showNav)}>
                 {link.name}
               </a>
@@ -88,8 +88,8 @@ const NavLinks = [
     name: 'Services - Web',
     path: '/services/web',
   },
-  // {
-  //   name: 'Contact',
-  //   path: '/contact',
-  // },
+  {
+    name: 'Resource',
+    path: '/resource',
+  },
 ];
