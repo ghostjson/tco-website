@@ -1,9 +1,10 @@
 import Nav from './Nav';
+import Navbar from './Navbar';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className='relative'>
-      <Nav />
+      <Navbar />
       <div>{children}</div>
     </div>
   );

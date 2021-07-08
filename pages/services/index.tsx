@@ -31,17 +31,9 @@ const Services = () => {
             price='850'
             title='WEB Design'
             desc='We create “Smart Sites” that provide user data for your website to
-            help you make better decisions for your business'>
-            <ServiceItem.Button>
-              <Link href='/services/web'>
-                <button
-                  className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
-                  style={{ backgroundColor: '#5A4262' }}>
-                  Find Out More
-                </button>
-              </Link>
-            </ServiceItem.Button>
-          </ServiceItem>
+            help you make better decisions for your business'
+            link='/services/web'
+          />
         </div>
         <img
           src='/illustrations/branding-banner.svg'
@@ -62,17 +54,9 @@ const Services = () => {
             price='350'
             title='Brand Design'
             desc='We create brand identities that shape consumer perception of your
-            brand to help you stand out from your competitors.'>
-            <ServiceItem.Button>
-              <Link href='/services/branding'>
-                <button
-                  className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
-                  style={{ backgroundColor: '#60B19C' }}>
-                  Find Out More
-                </button>
-              </Link>
-            </ServiceItem.Button>
-          </ServiceItem>
+            brand to help you stand out from your competitors.'
+            link='/services/branding'
+          />
         </div>
         <img
           src='/illustrations/marketing-banner.svg'
@@ -90,17 +74,9 @@ const Services = () => {
             price='50'
             title='Marketing Design'
             desc='We create marketing materials that communicates effectively to your
-            target audiences in order to boost sales.'>
-            <ServiceItem.Button>
-              <Link href='/services/marketing'>
-                <button
-                  className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
-                  style={{ backgroundColor: '#3A7A98' }}>
-                  Find Out More
-                </button>
-              </Link>
-            </ServiceItem.Button>
-          </ServiceItem>
+            target audiences in order to boost sales.'
+            link='/services/marketing'
+          />
         </div>
       </div>
       <div className='pt-32 pb-16 px-2 flex flex-col items-center'>

@@ -1,9 +1,24 @@
+import Link from 'next/link';
 import React from 'react';
 
-const ServiceItem = ({ title, color, price, desc, children }) => {
-  const button = React.Children.map(children, (child) =>
-    child.type.displayName === 'Button' ? child : null
-  );
+type ServiceItemProps = {
+  title: string;
+  color: string;
+  price: number | string;
+  desc: string;
+  callback?: (fn: () => void) => void;
+  link?: string;
+};
+
+// ServiceItem component
+const ServiceItem: React.FC<ServiceItemProps> = ({
+  title,
+  color,
+  price,
+  desc,
+  link,
+  callback,
+}) => {
   return (
     <div className='flex flex-col justify-between'>
       <span>
@@ -17,13 +32,23 @@ const ServiceItem = ({ title, color, price, desc, children }) => {
         </h4>
         <p className='xl:w-3/4'>{desc}</p>
       </span>
-      {button}
+      {link ? (
+        <Link href={link}>
+          <button
+            className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
+            style={{ backgroundColor: color }}>
+            Find Out More
+          </button>
+        </Link>
+      ) : (
+        <button
+          className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
+          style={{ backgroundColor: color }}>
+          How it Works
+        </button>
+      )}
     </div>
   );
 };
 
 export default ServiceItem;
-
-const Button = ({ children }) => children;
-Button.displayName = 'Button';
-ServiceItem.Button = Button;

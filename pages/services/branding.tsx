@@ -89,3 +89,36 @@ const Branding = () => {
 };
 
 export default Branding;
+
+const pricingData = [
+  {
+    color: '#60B19C',
+    price: '350',
+    title: 'BASIC LOGO',
+    desc: 'A customized logo deisgn suitable for businesses that need a simple logo solution.',
+  },
+  {
+    color: '#3E7F6E',
+    price: '1750',
+    title: 'CORPORATE BRAND',
+    desc: 'A strategic brand identity design suitable for businesses that require a professional corporate image.',
+  },
+];
+
+const stepData = [
+  [
+    'Contact us & register account',
+    'Fill out an order form',
+    'Make payment & project begins',
+    'Select 1 of 2 logo design options',
+    'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format)',
+  ],
+  [
+    'Contact us & register account',
+    'Fill out an order form',
+    'Make payment & project begins',
+    'Review brand strategy proposal & select 1of 3 logo design options',
+    'Select 1 of 2 Corporate Identity design options. (Includes business card, letterhead & invoice design)',
+    'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format. Full color business card, letterhead & invoice ddesign in AI & PDF format)',
+  ],
+];
