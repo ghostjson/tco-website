@@ -1,5 +1,4 @@
 import Layout from '@components/Layout';
-import PriceChart from '@components/PriceChart';
 import ServiceFooter from '@components/ServiceFooter';
 import ServicePricing from '@components/ServicePricing';
 
