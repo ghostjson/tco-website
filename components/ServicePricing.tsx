@@ -19,7 +19,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 }) => {
   const [active, setActive] = useState({ service1: false, service2: false });
   return (
-    <div className='my-10'>
+    <div className='my-10 w-full md:px-24 self-center'>
       <div className='flex space-x-2'>
         <div className='flex flex-col justify-between w-3/4'>
           <ServiceItem
