@@ -10,7 +10,7 @@ type ServiceFooter = {
 const ServiceFooter = ({ children, title, price, className }) => {
   return (
     <footer
-      className={`text-white p-8  xl:p-24  text-justify font-calibri font-regular ${
+      className={`text-white p-8 md:p-16  xl:p-24  text-justify font-calibri font-regular ${
         className ? className : ''
       }`}>
       <div className='flex justify-left xl:justify-between mb-0'>
