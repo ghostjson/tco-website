@@ -1,11 +1,12 @@
 import Layout from '@components/Layout';
 import PriceChart from '@components/PriceChart';
 import ServiceFooter from '@components/ServiceFooter';
+import ServicePricing from '@components/ServicePricing';
 
 const Web = () => {
   return (
     <Layout>
-      <div className='h-[30vh] md:h-[40vh] xl:h-[60vh] relative flow-root bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F]'>
+      <div className='h-[40vh] xl:h-[60vh] relative flow-root bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F]'>
         <img
           src='/images/main-logo.png'
           alt='main-logo'
@@ -14,12 +15,7 @@ const Web = () => {
         <img
           src='/illustrations/web-banner.svg'
           alt='web banner'
-          className='absolute -bottom-10 md:-bottom-20 xl:-bottom-36 hidden md:block'
-        />
-        <img
-          src='/illustrations/web-banner.gif'
-          alt='web banner'
-          className='absolute -bottom-10 md:-bottom-20 xl:-bottom-36 right-0 bg-repeat md:hidden -z-10'
+          className='absolute -bottom-1 md:-bottom-20 xl:-bottom-36'
         />
       </div>
       <div className='mt-[10vh] xl:mt-[10vh] flex flex-col items-center p-4 xl:p-16'>
@@ -33,36 +29,8 @@ const Web = () => {
           We create “Smart Sites” that provide user data for your website to
           help you make better decisions for your business
         </p>
-        <div className='flex w-full gap-3 justify-evenly items-start mt-16 px-4 xl:px-32 pb-32'>
-          <PriceChart
-            color='#775681'
-            price='350'
-            title='BASIC LOGO'
-            desc='A customized logo deisgn suitable for businesses that need a simple logo solution.'
-            steps={[
-              'Contact us & register account',
-              'Fill out an order form & purchase your domain and hosting',
-              'Make payment & project begins',
-              'Select 1 of 2 web design options',
-              'Project complete with handover.',
-            ]}
-          />
-          <div className='h-96 w-1 bg-[#D3D1E4] xl:mx-6 self-end hidden xl:block'></div>
-          <PriceChart
-            color='#5A4262'
-            price='1750'
-            title='CORPORATE BRAND'
-            desc='A strategic brand identity design suitable for businesses that require a professional corporate image.'
-            steps={[
-              'Contact us & register account',
-              'Fill out an order form(includes 1 year domain & hosting)',
-              'Make payment & project begins',
-              'Review web strategy proposal & select 1of 3 web design options',
-              'Content Edits. (Max 2)',
-              'Project complete with handover.',
-            ]}
-          />
-        </div>
+        {/* pricing of web services  */}
+        <ServicePricing service1={pricing1} service2={pricing2} />
       </div>
       {/* footer  */}
       <ServiceFooter
@@ -89,3 +57,33 @@ const Web = () => {
 };
 
 export default Web;
+
+// pricing data used in this page
+const pricing1 = {
+  color: '#775681',
+  price: '350',
+  title: 'BASIC LOGO',
+  desc: 'A customized logo deisgn suitable for businesses that need a simple logo solution.',
+  steps: [
+    'Contact us & register account',
+    'Fill out an order form & purchase your domain and hosting',
+    'Make payment & project begins',
+    'Select 1 of 2 web design options',
+    'Project complete with handover.',
+  ],
+};
+
+const pricing2 = {
+  color: '#5A4262',
+  price: '1750',
+  title: 'CORPORATE BRAND',
+  desc: 'A strategic brand identity design suitable for businesses that require a professional corporate image.',
+  steps: [
+    'Contact us & register account',
+    'Fill out an order form(includes 1 year domain & hosting)',
+    'Make payment & project begins',
+    'Review web strategy proposal & select 1of 3 web design options',
+    'Content Edits. (Max 2)',
+    'Project complete with handover.',
+  ],
+};

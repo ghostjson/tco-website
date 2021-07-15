@@ -27,12 +27,12 @@ const ServiceItem: React.FC<ServiceItemProps> = ({
           style={{ color: color }}>
           ${price}
         </h2>
-        <h4 className='font-bold text-base xl:text-xl uppercase tracking-wider mb-0'>
+        <h4 className='font-bold font-calibri text-base xl:text-xl uppercase tracking-wider mb-0'>
           {title}
         </h4>
-        <p className='xl:w-3/4'>{desc}</p>
+        <p className='xl:w-3/4 font-agaramondPro'>{desc}</p>
       </span>
-      {link ? (
+      {link && (
         <Link href={link}>
           <button
             className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
@@ -40,12 +40,6 @@ const ServiceItem: React.FC<ServiceItemProps> = ({
             Find Out More
           </button>
         </Link>
-      ) : (
-        <button
-          className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
-          style={{ backgroundColor: color }}>
-          How it Works
-        </button>
       )}
     </div>
   );

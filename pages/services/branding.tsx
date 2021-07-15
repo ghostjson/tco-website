@@ -1,11 +1,12 @@
 import Layout from '@components/Layout';
 import PriceChart from '@components/PriceChart';
 import ServiceFooter from '@components/ServiceFooter';
+import ServicePricing from '@components/ServicePricing';
 
 const Branding = () => {
   return (
     <Layout>
-      <div className='h-[60vh] md:h-[40vh] xl:h-[80vh] relative flow-root bg-gradient-to-t from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
+      <div className='h-[40vh] xl:h-[80vh] relative flow-root bg-gradient-to-t from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
         <img
           src='/images/main-logo.png'
           alt='main-logo'
@@ -14,12 +15,7 @@ const Branding = () => {
         <img
           src='/illustrations/branding-banner.svg'
           alt='branding banner'
-          className='absolute hidden md:block -bottom-10 md:-bottom-20 xl:-bottom-50'
-        />
-        <img
-          src='/illustrations/branding-banner.gif'
-          alt='web banner'
-          className='absolute top-20  right-0 bg-repeat md:hidden -z-10'
+          className='absolute -bottom-10 md:-bottom-20 xl:-bottom-50'
         />
       </div>
       <div className='mt-[10vh] xl:mt-0 flex flex-col items-center p-4 xl:p-16 bg-white z-10'>
@@ -33,36 +29,7 @@ const Branding = () => {
           We create brand identities that shape consumer perception of your
           brand to help you stand out from your competitors.
         </p>
-        <div className='flex w-full gap-3 justify-evenly items-start mt-16 px-4 xl:px-32 pb-32'>
-          <PriceChart
-            color='#60B19C'
-            price='350'
-            title='BASIC LOGO'
-            desc='A customized logo deisgn suitable for businesses that need a simple logo solution.'
-            steps={[
-              'Contact us & register account',
-              'Fill out an order form',
-              'Make payment & project begins',
-              'Select 1 of 2 logo design options',
-              'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format)',
-            ]}
-          />
-          <div className='h-96 w-1 bg-[#A9DED0] xl:mx-6 self-end hidden xl:block'></div>
-          <PriceChart
-            color='#3E7F6E'
-            price='1750'
-            title='CORPORATE BRAND'
-            desc='A strategic brand identity design suitable for businesses that require a professional corporate image.'
-            steps={[
-              'Contact us & register account',
-              'Fill out an order form',
-              'Make payment & project begins',
-              'Review brand strategy proposal & select 1of 3 logo design options',
-              'Select 1 of 2 Corporate Identity design options. (Includes business card, letterhead & invoice design)',
-              'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format. Full color business card, letterhead & invoice ddesign in AI & PDF format)',
-            ]}
-          />
-        </div>
+        <ServicePricing service1={pricing1} service2={pricing2} />
       </div>
       {/* footer  */}
       <ServiceFooter
@@ -90,30 +57,27 @@ const Branding = () => {
 
 export default Branding;
 
-const pricingData = [
-  {
-    color: '#60B19C',
-    price: '350',
-    title: 'BASIC LOGO',
-    desc: 'A customized logo deisgn suitable for businesses that need a simple logo solution.',
-  },
-  {
-    color: '#3E7F6E',
-    price: '1750',
-    title: 'CORPORATE BRAND',
-    desc: 'A strategic brand identity design suitable for businesses that require a professional corporate image.',
-  },
-];
-
-const stepData = [
-  [
+// pricing data used in this page
+const pricing1 = {
+  color: '#60B19C',
+  price: '350',
+  title: 'BASIC LOGO',
+  desc: 'A customized logo deisgn suitable for businesses that need a simple logo solution.',
+  steps: [
     'Contact us & register account',
     'Fill out an order form',
     'Make payment & project begins',
     'Select 1 of 2 logo design options',
     'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format)',
   ],
-  [
+};
+
+const pricing2 = {
+  color: '#3E7F6E',
+  price: '1750',
+  title: 'CORPORATE BRAND',
+  desc: 'A strategic brand identity design suitable for businesses that require a professional corporate image.',
+  steps: [
     'Contact us & register account',
     'Fill out an order form',
     'Make payment & project begins',
@@ -121,4 +85,4 @@ const stepData = [
     'Select 1 of 2 Corporate Identity design options. (Includes business card, letterhead & invoice design)',
     'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format. Full color business card, letterhead & invoice ddesign in AI & PDF format)',
   ],
-];
+};

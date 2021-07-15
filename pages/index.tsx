@@ -73,7 +73,7 @@ export default function Home() {
               animate='enter'
               exit='exit'
               variants={textVariants}
-              className='font-agaramondPro md:text-xl w-full xl:w-1/2 text-center xl:text-left'>
+              className='font-agaramondPro md:text-2xl w-full xl:w-1/2 text-center xl:text-left'>
               Welcome to The Creative Oracle! We are creatives that are
               passionate about design & consultants that practice sound business
               & marketing principles. We are inspired by both beauty and wisdom,

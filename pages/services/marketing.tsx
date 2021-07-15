@@ -1,6 +1,7 @@
 import Layout from '@components/Layout';
 import PriceChart from '@components/PriceChart';
 import ServiceFooter from '@components/ServiceFooter';
+import ServicePricing from '@components/ServicePricing';
 
 const Marketing = () => {
   return (
@@ -19,15 +20,10 @@ const Marketing = () => {
         <img
           src='/illustrations/marketing-banner.svg'
           alt='marketing banner'
-          className='absolute hidden md:block md:-bottom-1/4 xl:bottom-auto xl:top-[20%]'
-        />
-        <img
-          src='/illustrations/marketing-banner.gif'
-          alt='web banner'
-          className='absolute top-10  right-0 bg-repeat md:hidden -z-10'
+          className='absolute -bottom-1/4 xl:bottom-auto xl:top-[20%]'
         />
       </div>
-      <div className='mt-[30vh] xl:mt-[45vh] flex flex-col items-center p-4 xl:p-16'>
+      <div className='mt-[10vh] xl:mt-[45vh] flex flex-col items-center p-4 xl:p-16'>
         <span className='relative py-2'>
           <h2 className='text-4xl uppercase font-semibold text-[#3A7A98] text-center'>
             Marketing Design
@@ -38,33 +34,7 @@ const Marketing = () => {
           We create marketing materials that communicates effectively to your
           target audiences in order to boost sales.
         </p>
-        <div className='flex w-full gap-3 justify-evenly items-start mt-16 px-4 xl:px-32 pb-32'>
-          <PriceChart
-            color='#3A7B99'
-            price='50'
-            title='Smart Template'
-            desc='A downloadable template suitable for organizations that want a fast solution & able to edit content on their own.'
-            steps={[
-              'Register account & browse store.',
-              'Purchase credits.',
-              'Select template & download. (Editable artwork in PSD/EPS/PPT or DOC format).',
-            ]}
-          />
-          <div className='h-96 w-1 bg-[#BCD5DA] xl:mx-6 self-end hidden xl:block'></div>
-          <PriceChart
-            color='#27566C'
-            price='350'
-            title='Template Plus'
-            desc='A template personalised by design professionals suit able for organizations that want an easy solution.'
-            steps={[
-              'Register account & browse store.',
-              'Purchase credits.',
-              'Select template & customize.',
-              'Fill out form & project begins.',
-              'Project complete with handover. (Editable artwork in PSD/EPS/PPT or DOC plus in PDF & JPG format.)',
-            ]}
-          />
-        </div>
+        <ServicePricing service1={pricing1} service2={pricing2} />
       </div>
       {/* footer  */}
       <ServiceFooter
@@ -84,3 +54,30 @@ const Marketing = () => {
 };
 
 export default Marketing;
+
+// pricing data used in this page
+const pricing1 = {
+  color: '#3A7B99',
+  price: '50',
+  title: 'Smart Template',
+  desc: 'A downloadable template suitable for organizations that want a fast solution & able to edit content on their own.',
+  steps: [
+    'Register account & browse store.',
+    'Purchase credits.',
+    'Select template & download. (Editable artwork in PSD/EPS/PPT or DOC format).',
+  ],
+};
+
+const pricing2 = {
+  color: '#27566C',
+  price: '350',
+  title: 'Template Plus',
+  desc: 'A template personalised by design professionals suit able for organizations that want an easy solution.',
+  steps: [
+    'Register account & browse store.',
+    'Purchase credits.',
+    'Select template & customize.',
+    'Fill out form & project begins.',
+    'Project complete with handover. (Editable artwork in PSD/EPS/PPT or DOC plus in PDF & JPG format.)',
+  ],
+};

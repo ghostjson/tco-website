@@ -21,7 +21,7 @@ const Navbar = () => {
           return (
             <Link href={link.path} key={index}>
               <a
-                className='capitalize cursor-pointer p-4 md:px-8 text-lg font-semibold'
+                className='capitalize cursor-pointer p-4 md:px-8 text-lg font-calibri font-semibold'
                 onClick={() => setShowNav(!showNav)}>
                 {link.name}
               </a>
