@@ -8,7 +8,7 @@ module.exports = {
         xl: '1200px',
       },
       fontFamily: {
-        agaramondPro: ['AGaramon Pro'],
+        agaramondPro: ['AGaramondPro'],
         calibri: ['Calibri'],
       },
     },

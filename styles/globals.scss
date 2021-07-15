@@ -5,7 +5,21 @@
 @layer base {
   @font-face {
     font-family: 'Calibri';
-    src: url('/fonts/Calibri.ttf');
+    src: url('/fonts/calibri-regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Calibri';
+    src: url('/fonts/calibri-bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'AGaramondPro';
+    src: url('/fonts/AGaramondPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
   }
 }
 
