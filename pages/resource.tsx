@@ -14,14 +14,14 @@ const Resource = () => {
         />
       </div>
       <div className='relative bg-white -mt-2 z-20 h-20'>
-        <SocialIconBar className='absolute right-1 top-2 md:right-8 scale-75' />
+        <SocialIconBar className='absolute right-1 top-2 md:right-8 scale-75 xl:scale-100' />
       </div>
       <QuizIntro className='px-2 mb-10' />
 
       {/* preview of all the blogs  */}
       <BlogPreview blogData={dummyBlogs} />
       {/* login signup section  */}
-      <div className='flex flex-col items-center space-y-2 mt-4 mb-20'>
+      <div className='flex flex-col items-center space-y-2 mt-4 mb-20 xl:mb-10'>
         <h6 className='text-lg'>Log in to access your account</h6>
         <div className='flex space-x-1 text-white  '>
           <button className='p-2 py-1 uppercase font-semibold bg-[#5F5B82]'>

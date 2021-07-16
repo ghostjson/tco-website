@@ -26,7 +26,7 @@ const Services = () => {
       </div>
       {/* branding  */}
       <div className='relative mt-10'>
-        <div className='absolute -top-10 right-1 w-44 scale-75'>
+        <div className='absolute -top-10 right-1 w-44 scale-75 xl:scale-100 '>
           <ServiceItem
             color='#5A4262'
             price='850'
@@ -49,7 +49,7 @@ const Services = () => {
       </div>
       {/* marketing */}
       <div className='relative'>
-        <div className='absolute -top-1/2 left-1 w-44 scale-75'>
+        <div className='absolute -top-1/2 left-1 w-44 scale-75 xl:scale-100'>
           <ServiceItem
             color='#60B19C'
             price='350'
@@ -69,7 +69,7 @@ const Services = () => {
           alt='web banner'
           className='bg-repeat md:hidden -z-10 -mt-32'
         />
-        <div className='absolute -bottom-1/4 left-1 w-44 scale-75'>
+        <div className='absolute -bottom-1/4 left-1 w-44 scale-75 xl:scale-100'>
           <ServiceItem
             color='#3A7A98'
             price='50'
