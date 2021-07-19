@@ -1,4 +1,4 @@
-import SocialIconBar from './SocialIconBar';
+import SocialIconBar from '@components/SocialIconBar';
 
 const Footer = () => {
   return (

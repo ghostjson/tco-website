@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ServiceItem from './ServiceItem';
+import ServiceItem from '@components/ServiceItem';
 type PriceItem = {
   price: string;
   title: string;

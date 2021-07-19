@@ -1,4 +1,4 @@
-import Pill from './Pill';
+import Pill from '@components/Pill';
 
 const UserActions = ({ className }: { className: string }) => {
   return (
