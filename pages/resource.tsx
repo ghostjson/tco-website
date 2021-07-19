@@ -20,18 +20,6 @@ const Resource = () => {
 
       {/* preview of all the blogs  */}
       <BlogPreview blogData={dummyBlogs} />
-      {/* login signup section  */}
-      <div className='flex flex-col items-center space-y-2 mt-4 mb-20 xl:mb-10'>
-        <h6 className='text-lg'>Log in to access your account</h6>
-        <div className='flex space-x-1 text-white  '>
-          <button className='p-2 py-1 uppercase font-semibold bg-[#5F5B82]'>
-            Log in
-          </button>
-          <button className='p-2 py-1 uppercase font-semibold bg-[#363E53]'>
-            Register
-          </button>
-        </div>
-      </div>
     </Layout>
   );
 };
