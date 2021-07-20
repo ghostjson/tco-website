@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import NavLink from './NavLink';
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -17,15 +17,14 @@ const Navbar = () => {
         className={`bg-white absolute z-50 top-0 left-0 w-3/4 md:w-1/2 h-screen flex flex-col pt-32 transform transition-all ${
           showNav ? '' : '-translate-x-full'
         }`}>
-        {NavLinks.map((link, index) => {
+        {NavLinks.map((link, key) => {
           return (
-            <Link href={link.path} key={index}>
-              <a
-                className='capitalize cursor-pointer p-4 md:px-8 text-lg font-calibri font-semibold'
-                onClick={() => setShowNav(!showNav)}>
-                {link.name}
-              </a>
-            </Link>
+            <NavLink
+              key={key}
+              path={link.path}
+              value={link.name}
+              onClickFn={() => setShowNav(!showNav)}
+            />
           );
         })}
       </div>
@@ -75,18 +74,6 @@ const NavLinks = [
   {
     name: 'Services',
     path: '/services',
-  },
-  {
-    name: 'Services - Brand',
-    path: '/services/branding',
-  },
-  {
-    name: 'Services - Marketing',
-    path: '/services/marketing',
-  },
-  {
-    name: 'Services - Web',
-    path: '/services/web',
   },
   {
     name: 'Resource',
