@@ -2,7 +2,7 @@ import SocialIconBar from '@components/SocialIconBar';
 
 const Footer = () => {
   return (
-    <footer className='bg-black text-white p-16 px-8 xl:px-24 space-y-8 text-justify font-calibri'>
+    <footer className='bg-black text-white p-16 px-8 xl:px-24 space-y-8 font-calibri'>
       <div className='flex justify-center xl:justify-between'>
         <h2 className='text-4xl uppercase tracking-wide py-2 relative'>
           Why Us

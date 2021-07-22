@@ -84,7 +84,7 @@ const Services = () => {
       <QuizIntro className='pt-32 pb-16 px-2' />
 
       {/* footer  */}
-      <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-4 text-justify font-calibri'>
+      <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-4 font-calibri'>
         <div className='flex justify-center xl:justify-between'>
           <h2 className='text-4xl uppercase tracking-wide py-2 relative'>
             Why Us
