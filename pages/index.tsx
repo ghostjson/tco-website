@@ -67,7 +67,7 @@ export default function Home() {
             </Pill>
           </div>
           <div className='h-auto bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-24 py-16 px-6 md:px-16 justify-between space-y-8'>
-            <UserActions className='self-center' />
+            <UserActions className='self-center z-30' />
             <motion.p
               initial='exit'
               animate='enter'

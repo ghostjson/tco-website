@@ -12,7 +12,7 @@ const UserActions = ({ className }: { className: string }) => {
           Browse this site
         </Pill>
         <a href='https://api.whatsapp.com/send?phone=6583337803'>
-          <Pill className='px-8 pl-10 bg-[#A5904F] relative  hidden xl:block'>
+          <Pill className='px-8 pl-10 py-2 bg-[#A5904F] relative  hidden xl:block'>
             <img
               src='/icons/whatsapp-legacy.svg'
               alt='whatsapp chat icon'

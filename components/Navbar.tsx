@@ -30,7 +30,7 @@ const Navbar = () => {
       </div>
       {/* backdrop for the navbar  */}
       <div
-        className={`bg-black opacity-50 absolute w-full h-screen transform z-30 ${
+        className={`bg-black opacity-50 absolute w-full h-screen transform z-40 ${
           showNav ? '' : '-translate-x-full'
         }`}
         onClick={() => setShowNav(!showNav)}></div>
