@@ -3,11 +3,11 @@ const BoldHeading = ({
   className,
 }: {
   heading: string;
-  className: string;
+  className?: string;
 }) => {
   return (
-    <span className={className}>
-      <h2 className='text-3xl tracking-wide xl:text-5xl uppercase text-white text-center font-calibri'>
+    <span className={`${className}`}>
+      <h2 className='text-3xl tracking-wide xl:text-5xl uppercase text-white text-center font-calibri relative'>
         {heading}
         <span className='absolute -bottom-1 right-1/2 transform translate-x-1/2 bg-white h-0.5 rounded-full w-1/2'></span>
       </h2>

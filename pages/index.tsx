@@ -60,9 +60,9 @@ export default function Home() {
               variants={variants}
               src='/illustrations/women-illustration.png'
               alt='women meditating'
-              className='absolute -bottom-1/4 xl:-bottom-52 right-0 w-[40rem] z-20'
+              className='absolute -bottom-28 xl:-bottom-52 -right-4 w-[40rem] z-20'
             />
-            <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-0 md:right-2/3 px-[.5rem] py-0.5 md:px-4 md:left-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
+            <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-0 md:right-2/3 p-2 md:px-4 md:left-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
               Hello, How May I Help You?
             </Pill>
           </div>
@@ -86,7 +86,7 @@ export default function Home() {
             <a
               href='https://api.whatsapp.com/send?phone=6583337803'
               className='self-center xl:hidden'>
-              <Pill className='bg-gray-800 rounded-xl relative px-6 pl-10 text-white text-sm xl:hidden'>
+              <Pill className='bg-gray-800 rounded-xl relative px-6 py-1 pl-10 text-white text-sm xl:hidden'>
                 <img
                   src='/icons/whatsapp-legacy.svg'
                   alt='whatsapp chat icon'
@@ -105,7 +105,7 @@ export default function Home() {
             </h2>
             <SocialIconBar className='hidden xl:flex' />
           </div>
-          <p className='text-lg md:text-2xl tracking-wide'>
+          <p className='text-sm md:text-2xl tracking-wide'>
             The Creative Oracle understands both your business & design needs.
             We are specialised in helping businesses achieve their business
             goals through visual strategies.

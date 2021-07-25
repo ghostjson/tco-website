@@ -29,7 +29,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
             color={service1.color}
           />
           <button
-            className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
+            className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start transform scale-90 rounded-sm my-4'
             style={{ backgroundColor: service1.color }}
             onClick={() =>
               setActive((state) => ({ ...state, service1: !state.service1 }))
@@ -45,7 +45,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
             color={service2.color}
           />
           <button
-            className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start rounded-sm my-4'
+            className='text-sm xl:text-base text-white font-bold p-1.5 xl:p-3 uppercase self-start transform scale-90 rounded-sm my-4'
             style={{ backgroundColor: service2.color }}
             onClick={() =>
               setActive((state) => ({ ...state, service2: !state.service2 }))

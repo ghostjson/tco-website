@@ -20,7 +20,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({
   callback,
 }) => {
   return (
-    <div className='flex flex-col justify-between'>
+    <div className='flex flex-col justify-between px-2'>
       <span>
         <h2
           className='text-4xl xl:text-5xl font-semibold mb-2'
