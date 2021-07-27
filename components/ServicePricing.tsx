@@ -19,9 +19,9 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 }) => {
   const [active, setActive] = useState({ service1: false, service2: false });
   return (
-    <div className='my-10 w-full md:px-24 self-center'>
+    <div className='my-10 w-full md:px-24 self-center '>
       <div className='flex space-x-2'>
-        <div className='flex flex-col justify-between w-3/4'>
+        <div className='flex flex-col justify-between w-3/4 md:pr-10'>
           <ServiceItem
             title={service1.title}
             price={service1.price}
@@ -37,7 +37,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
             How it Works
           </button>
         </div>
-        <div className='flex flex-col justify-between w-3/4'>
+        <div className='flex flex-col justify-between w-3/4 md:pr-10'>
           <ServiceItem
             title={service2.title}
             price={service2.price}
@@ -55,7 +55,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         </div>
       </div>
       <div className='flex justify-between space-x-2'>
-        <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4'>
+        <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4 md:pr-10'>
           {active.service1 &&
             service1.steps.map((step, index) => {
               return (
@@ -70,7 +70,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               );
             })}
         </div>
-        <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4'>
+        <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4 md:pr-10'>
           {active.service2 &&
             service2.steps.map((step, index) => {
               return (

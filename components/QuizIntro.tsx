@@ -15,7 +15,7 @@ const QuizIntro = ({ className }: { className?: string }) => {
         <h4 className='text-[1.5rem] font-bold text-center uppercase w-full xl:text-left'>
           The New Normal Economy
         </h4>
-        <h6 className='font-semibold flex justify-evenly md:justify-center xl:justify-start w-full text-[.83rem] self-center xl:self-auto xl:text-md -mt-1 text-center'>
+        <h6 className='font-semibold flex justify-evenly md:justify-center xl:justify-start w-full text-[.83rem] self-center xl:self-auto md:text-md -mt-1 text-center'>
           {'Should you '
             .split('')
             .map((letter, key) =>
@@ -54,7 +54,7 @@ const QuizIntro = ({ className }: { className?: string }) => {
               )
             )}
         </h6>
-        <p className='text-sm text-justify xl:text-base mt-1 leading-snug font-calibri'>
+        <p className='text-sm text-justify md:text-base mt-1 leading-snug font-calibri md:px-40 xl:px-auto '>
           Many people think it is a given to cut back on marketing dollars in
           times of economy crisis, however when majority of businesses do so,
           consumer messaging falls drastically and thus an opportunity for

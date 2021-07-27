@@ -16,17 +16,18 @@ const Services = () => {
         <img
           src='/illustrations/web-banner.svg'
           alt='web banner'
-          className='hidden md:block bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F] pt-20'
+          className='hidden xl:block bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F] pt-20'
         />
         <img
           src='/illustrations/web-banner.gif'
           alt='web banner'
-          className='bg-repeat md:hidden z-10'
+          className='bg-repeat xl:hidden z-10'
         />
       </div>
-      {/* branding  */}
+
+      {/* web service info  */}
       <div className='relative mt-10'>
-        <div className='absolute -top-10 right-1 w-44 scale-75 xl:scale-100 '>
+        <div className='absolute -top-10 md:top-5 right-1 md:right-4 w-44 scale-75 md:scale-100'>
           <ServiceItem
             color='#5A4262'
             price='850'
@@ -39,17 +40,17 @@ const Services = () => {
         <img
           src='/illustrations/branding-banner.svg'
           alt='branding banner'
-          className='hidden md:block'
+          className='hidden xl:block xl:pt-40'
         />
         <img
           src='/illustrations/branding-banner.gif'
           alt='web banner'
-          className='bg-repeat md:hidden z-10'
+          className='bg-repeat xl:hidden z-10'
         />
       </div>
-      {/* marketing */}
+      {/* brand design service info */}
       <div className='relative'>
-        <div className='absolute -top-1/2 left-1 w-44 scale-75 xl:scale-100'>
+        <div className='absolute -top-1/2 md:-top-72 left-1 md:left-4 w-44 scale-75 md:scale-100'>
           <ServiceItem
             color='#60B19C'
             price='350'
@@ -62,14 +63,15 @@ const Services = () => {
         <img
           src='/illustrations/marketing-banner.svg'
           alt='marketing banner'
-          className='hidden md:block'
+          className='hidden xl:block xl:pt-40'
         />
         <img
           src='/illustrations/marketing-banner.gif'
           alt='web banner'
-          className='bg-repeat md:hidden -z-10 -mt-32'
+          className='bg-repeat xl:hidden -z-10 -mt-40 md:-mt-96'
         />
-        <div className='absolute -bottom-1/4 left-1 w-44 scale-75 xl:scale-100'>
+        {/* marketing design service info  */}
+        <div className='absolute -bottom-1/4 md:bottom-0 left-1 md:left-4 w-44 scale-75 md:scale-100 xl:pt-40'>
           <ServiceItem
             color='#3A7A98'
             price='50'
@@ -81,7 +83,7 @@ const Services = () => {
         </div>
       </div>
       {/* quiz intro section  */}
-      <QuizIntro className='pt-32 pb-16 px-2' />
+      <QuizIntro className='pt-32 pb-16 px-2 md:mt-10' />
 
       {/* footer  */}
       <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-4 font-calibri'>
