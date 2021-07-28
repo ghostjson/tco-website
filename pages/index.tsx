@@ -38,10 +38,7 @@ export default function Home() {
               alt='main-logo'
               className='h-8 md:h-14'
             />
-            <svg
-              height='15'
-              width='inherit'
-              className='absolute -bottom-1 left-0 w-full'>
+            <svg height='15' className='absolute -bottom-1 left-0 w-full'>
               <path
                 d='M 00 15 q 200 -20 2000 0'
                 stroke='#b4c3d0'
@@ -52,7 +49,7 @@ export default function Home() {
             <img
               src='/illustrations/illus-bgline.svg'
               alt='illustration background stroke line'
-              className='absolute -bottom-1.5  right-0 w-[48rem] z-10'
+              className='absolute -bottom-1.5  right-0 w-[48rem] md:w-[38rem] xl:w-[48rem] z-10'
             />
             <motion.img
               initial='hidden'
@@ -60,9 +57,9 @@ export default function Home() {
               variants={variants}
               src='/illustrations/women-illustration.png'
               alt='women meditating'
-              className='absolute -bottom-28 xl:-bottom-52 -right-4 w-[40rem] z-20'
+              className='absolute -bottom-28 xl:-bottom-52 -right-4 w-[40rem] md:w-[35rem] xl:w-[40rem] z-20'
             />
-            <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-0 md:right-2/3 p-2 md:px-4 md:left-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
+            <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-0 md:right-2/6 p-2 md:px-4 md:left-auto xl:md-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
               Hello, How May I Help You?
             </Pill>
           </div>
