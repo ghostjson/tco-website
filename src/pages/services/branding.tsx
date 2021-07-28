@@ -1,7 +1,7 @@
-import BoldHeading from '@components/BoldHeading';
-import Layout from '@components/Layout';
-import ServiceFooter from '@components/ServiceFooter';
-import ServicePricing from '@components/ServicePricing';
+import BoldHeading from 'src/components/BoldHeading';
+import Layout from 'src/components/Layout';
+import ServiceFooter from 'src/components/ServiceFooter';
+import ServicePricing from 'src/components/ServicePricing';
 
 const Branding = () => {
   return (

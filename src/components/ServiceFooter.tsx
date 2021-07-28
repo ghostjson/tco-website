@@ -1,4 +1,4 @@
-import SocialIconBar from '@components/SocialIconBar';
+import SocialIconBar from 'src/components/SocialIconBar';
 
 type ServiceFooter = {
   children: React.ReactNode;

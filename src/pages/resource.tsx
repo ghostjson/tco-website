@@ -1,8 +1,8 @@
-import BlogPreview from '@components/BlogPreview';
-import BoldHeading from '@components/BoldHeading';
-import Layout from '@components/Layout';
-import QuizIntro from '@components/QuizIntro';
-import SocialIconBar from '@components/SocialIconBar';
+import BlogPreview from 'src/components/BlogPreview';
+import BoldHeading from 'src/components/BoldHeading';
+import Layout from 'src/components/Layout';
+import QuizIntro from 'src/components/QuizIntro';
+import SocialIconBar from 'src/components/SocialIconBar';
 
 const Resource = () => {
   return (

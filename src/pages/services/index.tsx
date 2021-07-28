@@ -1,8 +1,8 @@
-import Layout from '@components/Layout';
-import BoldHeading from '@components/BoldHeading';
-import ServiceItem from '@components/ServiceItem';
-import SocialIconBar from '@components/SocialIconBar';
-import QuizIntro from '@components/QuizIntro';
+import Layout from 'src/components/Layout';
+import BoldHeading from 'src/components/BoldHeading';
+import ServiceItem from 'src/components/ServiceItem';
+import SocialIconBar from 'src/components/SocialIconBar';
+import QuizIntro from 'src/components/QuizIntro';
 
 const Services = () => {
   return (

@@ -1,4 +1,4 @@
-import BlogCard from '@components/BlogCard';
+import BlogCard from 'src/components/BlogCard';
 
 type BlogPreviewProps = {
   blogData: {
