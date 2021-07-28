@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Layout from '@components/Layout';
 import BoldHeading from '@components/BoldHeading';
 import ServiceItem from '@components/ServiceItem';
