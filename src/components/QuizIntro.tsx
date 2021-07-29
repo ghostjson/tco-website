@@ -54,7 +54,7 @@ const QuizIntro = ({ className }: { className?: string }) => {
               )
             )}
         </h6>
-        <p className='text-sm text-justify md:text-base mt-1 leading-snug font-calibri md:px-40 xl:px-auto '>
+        <p className='text-sm text-justify md:text-base mt-1 leading-snug font-calibri md:px-40 xl:px-0 '>
           Many people think it is a given to cut back on marketing dollars in
           times of economy crisis, however when majority of businesses do so,
           consumer messaging falls drastically and thus an opportunity for
