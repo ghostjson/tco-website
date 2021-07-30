@@ -5,8 +5,7 @@ type PillType = {
 };
 const Pill = ({ className, children }: PillType) => {
   return (
-    <span
-      className={`${className} rounded-full flex items-center justify-center`}>
+    <span className={`${className} flex items-center justify-center`}>
       {children}
     </span>
   );

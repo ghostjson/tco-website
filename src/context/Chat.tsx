@@ -1,5 +1,5 @@
 import { question } from '@customTypes/Chat';
-import React, { ContextType, createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 
 type initialStateT = {
   active_q: number;

@@ -37,7 +37,7 @@ const UserActions = ({
                     className='cursor-pointer'>
                     <Pill
                       key={choice.id}
-                      className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base'>
+                      className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base rounded-full'>
                       {choice.choice}
                     </Pill>
                   </span>
@@ -47,7 +47,7 @@ const UserActions = ({
           })}
 
         <a href='https://api.whatsapp.com/send?phone=6583337803'>
-          <Pill className='px-8 pl-10 py-2 bg-[#A5904F] relative  hidden xl:block'>
+          <Pill className='px-8 pl-10 py-2 bg-[#A5904F] relative  hidden xl:block rounded-full'>
             <img
               src='/icons/whatsapp-legacy.svg'
               alt='whatsapp chat icon'
