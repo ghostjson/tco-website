@@ -1,6 +1,8 @@
 import Pill from 'src/components/Pill';
 import { choice } from 'src/types/Chat';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { ChatContext, UPDATE_ACTIVE_QUESTION } from '@contexts/Chat';
 
 const UserActions = ({
   className,
@@ -9,6 +11,7 @@ const UserActions = ({
   className: string;
   choices?: choice[];
 }) => {
+  const { state, dispatch } = useContext(ChatContext);
   return (
     <div className={`text-sm ${className}`}>
       <span className='hidden xl:inline'>I want to:</span>
@@ -19,26 +22,30 @@ const UserActions = ({
               <>
                 {choice.type === 'link' ? (
                   <Link href={choice.url} key={choice.id}>
-                    <a className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base'>
+                    <a className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base rounded-full'>
                       {choice.choice}
                     </a>
                   </Link>
                 ) : (
-                  <Pill
-                    key={choice.id}
-                    className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base'>
-                    {choice.choice}
-                  </Pill>
+                  <span
+                    onClick={() => {
+                      dispatch({
+                        type: UPDATE_ACTIVE_QUESTION,
+                        payload: choice.trigger_q_id,
+                      });
+                    }}
+                    className='cursor-pointer'>
+                    <Pill
+                      key={choice.id}
+                      className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base'>
+                      {choice.choice}
+                    </Pill>
+                  </span>
                 )}
               </>
             );
           })}
-        <Pill className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base'>
-          Engage your services
-        </Pill>
-        <Pill className='bg-[#A5904F] text-sm px-2 py-1 md:px-4 md:py-2 md:text-base'>
-          Browse this site
-        </Pill>
+
         <a href='https://api.whatsapp.com/send?phone=6583337803'>
           <Pill className='px-8 pl-10 py-2 bg-[#A5904F] relative  hidden xl:block'>
             <img

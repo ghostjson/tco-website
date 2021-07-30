@@ -1,8 +1,13 @@
+import { ChatContext, UPDATE_ACTIVE_QUESTION } from '@contexts/Chat';
+import { question } from '@customTypes/Chat';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { useContext, useEffect } from 'react';
 import Layout from 'src/components/Layout';
 import Pill from 'src/components/Pill';
 import SocialIconBar from 'src/components/SocialIconBar';
 import UserActions from 'src/components/UserActions';
+import { getElementById } from 'src/utils/getElementById';
 
 let easing = [0.175, 0.85, 0.42, 0.96];
 
@@ -25,6 +30,14 @@ const textVariants = {
 };
 
 export default function Home() {
+  const { state, dispatch } = useContext(ChatContext);
+  const [activeQ, setActiveQ] = useState<question>();
+
+  // changing the active question local state as state in context changes
+  useEffect(() => {
+    setActiveQ(getElementById(state.questions, state.active_q));
+  }, [state]);
+
   return (
     <Layout>
       <div>
@@ -59,12 +72,15 @@ export default function Home() {
               alt='women meditating'
               className='absolute -bottom-28 xl:-bottom-52 -right-4 w-[40rem] md:w-[35rem] xl:w-[40rem] z-20'
             />
-            <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-0 md:right-2/6 p-2 md:px-4 md:left-auto xl:md-auto xl:right-1/4 top-3/4 md:top-2/3 z-30 shadow-lg'>
-              Hello, How May I Help You?
+            <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-0 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-tr-none rounded-md'>
+              {activeQ && activeQ.question}
             </Pill>
           </div>
           <div className='h-auto bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-24 py-16 px-6 md:px-16 justify-between space-y-8'>
-            <UserActions className='self-center z-30' />
+            <UserActions
+              className='self-center z-30'
+              choices={activeQ && activeQ.choices}
+            />
             <motion.p
               initial='exit'
               animate='enter'

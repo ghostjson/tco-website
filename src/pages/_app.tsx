@@ -1,11 +1,14 @@
+import ChatContextProvider, { ChatContext } from '@contexts/Chat';
 import { AnimatePresence } from 'framer-motion';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} key={router.route} />
-    </AnimatePresence>
+    <ChatContextProvider>
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
+    </ChatContextProvider>
   );
 }
 
