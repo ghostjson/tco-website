@@ -30,7 +30,7 @@ const initialState: initialStateT = {
       question:
         'We will be most happy to provide you with the necessary service. What service are you interested in? You can also contact us directly',
       choices: [
-        { id: 1, choice: 'Web', type: 'link', url: '/web' },
+        { id: 1, choice: 'Web', type: 'link', url: '/services/web' },
         { id: 2, choice: 'Branding', type: 'link', url: '/services/branding' },
         {
           id: 3,
