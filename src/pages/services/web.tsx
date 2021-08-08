@@ -36,9 +36,9 @@ const Web = ({ title, description, pricing, footer }) => {
       {/* footer  */}
       <ServiceFooter
         className='bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F]'
-        title='Custom Brand Identity'
-        price='750'>
-        <p>
+        title={footer.Title}
+        subtitle={footer.Subtitle}>
+        {/* <p>
           A custom brand identity design is suitable form buisness targeting end
           consumers especially in F&B, online and offline retail & services with
           string competition
@@ -51,7 +51,8 @@ const Web = ({ title, description, pricing, footer }) => {
         </p>
         <p className='mt-6 text-lg md:text-xl'>
           Contact us for more information.
-        </p>
+        </p> */}
+        {footer.Content}
       </ServiceFooter>
     </Layout>
   );
