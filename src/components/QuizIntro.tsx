@@ -1,4 +1,4 @@
-const QuizIntro = ({ className }: { className?: string }) => {
+const QuizIntro = ({ className, data }: { className?: string; data: any }) => {
   return (
     <div
       className={`flex flex-col xl:flex-row items-center xl:px-10 xl:justify-center xl:gap-24 ${
@@ -13,7 +13,7 @@ const QuizIntro = ({ className }: { className?: string }) => {
       </div>
       <div className='flex flex-col items-start xl:w-2/6'>
         <h4 className='text-[1.5rem] font-bold text-center uppercase w-full xl:text-left'>
-          The New Normal Economy
+          {data.Title}
         </h4>
         <h6 className='font-semibold flex justify-evenly md:justify-center xl:justify-start w-full text-[.83rem] self-center xl:self-auto md:text-md -mt-1 text-center'>
           {'Should you '
@@ -55,15 +55,10 @@ const QuizIntro = ({ className }: { className?: string }) => {
             )}
         </h6>
         <p className='text-sm text-justify md:text-base mt-1 leading-snug font-calibri md:px-40 xl:px-0 '>
-          Many people think it is a given to cut back on marketing dollars in
-          times of economy crisis, however when majority of businesses do so,
-          consumer messaging falls drastically and thus an opportunity for
-          competitors to gain marketshare. So, what is the right move for you
-          business and how much should you spend on marketing in this new
-          normal? Take a 10-minute quiz below to find out.
+          {data.content}
         </p>
         <button className='bg-[#e45e1b] text-white p-2 uppercase mt-8 xl:mt-6 text-sm font-semibold self-center xl:self-auto'>
-          Take a Quiz
+          {data.button}
         </button>
       </div>
     </div>

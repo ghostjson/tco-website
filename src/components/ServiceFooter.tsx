@@ -3,11 +3,11 @@ import SocialIconBar from 'src/components/SocialIconBar';
 type ServiceFooter = {
   children: React.ReactNode;
   title: string;
-  price: string | number;
+  subtitle: string;
   className: string;
 };
 
-const ServiceFooter = ({ children, title, price, className }) => {
+const ServiceFooter = ({ children, title, subtitle, className }) => {
   return (
     <footer
       className={`text-white p-8 md:p-16  xl:p-24  font-calibri font-regular ${
@@ -17,7 +17,7 @@ const ServiceFooter = ({ children, title, price, className }) => {
         <h2 className='text-4xl uppercase tracking-wide text-left'>{title}</h2>
         <SocialIconBar className='hidden xl:flex' />
       </div>
-      <div className='uppercase text-xl xl:text-2xl -mt-2'>From ${price}</div>
+      <div className='uppercase text-xl xl:text-2xl -mt-2'>{subtitle}</div>
       <section className='text-lg md:text-xl tracking-wide mt-6 xl:w-10/12'>
         {children}
       </section>

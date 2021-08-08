@@ -1,17 +1,17 @@
+import { useEffect } from 'react';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
 import ServiceFooter from 'src/components/ServiceFooter';
 import ServicePricing from 'src/components/ServicePricing';
 
-const Web = () => {
+const Web = ({ title, description, pricing, footer }) => {
   return (
     <Layout>
       <div className='h-[50vh] xl:h-[60vh] relative flow-root bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F]'>
         <div className='absolute top-20 px-10 md:hidden'>
-          <BoldHeading heading='Web Design' />
+          <BoldHeading heading={title} />
           <p className='font-agaramondPro text-center text-white mt-5'>
-            We create “Smart Sites” that provide user data for your website to
-            help you make better decisions for your business
+            {description}
           </p>
         </div>
         <img
@@ -23,13 +23,12 @@ const Web = () => {
       <div className='mt-0 xl:mt-[10vh] flex flex-col items-center p-4 xl:p-16'>
         <span className='relative py-2 hidden md:block'>
           <h2 className='text-4xl uppercase font-semibold text-[#5A4262] text-center'>
-            Web Design
+            {title}
           </h2>
           <div className='absolute h-0.5 w-1/4 bottom-0 bg-[#5A4262] left-1/2 transform -translate-x-1/2 rounded-full'></div>
         </span>
         <p className='text-lg hidden xl:block xl:text-xl text-center mt-2 text-[#5A4262]'>
-          We create “Smart Sites” that provide user data for your website to
-          help you make better decisions for your business
+          {description}
         </p>
         {/* pricing of web services  */}
         <ServicePricing service1={pricing1} service2={pricing2} />
@@ -59,6 +58,20 @@ const Web = () => {
 };
 
 export default Web;
+
+export async function getStaticProps() {
+  const res = await fetch(`${process.env.CMS_URL}/services?Title=Web%20Design`);
+  const resolved = await res.json();
+  const data: any = resolved[0];
+  return {
+    props: {
+      title: data.Title,
+      description: data.Description,
+      pricing: data.pricing,
+      footer: data.Footer[0],
+    },
+  };
+}
 
 // pricing data used in this page
 const pricing1 = {

@@ -4,7 +4,7 @@ import ServiceItem from 'src/components/ServiceItem';
 import SocialIconBar from 'src/components/SocialIconBar';
 import QuizIntro from 'src/components/QuizIntro';
 
-const Services = () => {
+const Services = ({ web, brand, marketing, footer, quiz }) => {
   return (
     <Layout>
       <div className='relative'>
@@ -29,10 +29,9 @@ const Services = () => {
         <div className='absolute -top-10 md:top-5 right-1 md:right-4 w-44 scale-75 md:scale-100'>
           <ServiceItem
             color='#5A4262'
-            price='850'
-            title='WEB Design'
-            desc='We create “Smart Sites” that provide user data for your website to
-            help you make better decisions for your business'
+            price={web.Price}
+            title={web.Title}
+            desc={web.description}
             link='/services/web'
           />
         </div>
@@ -52,10 +51,9 @@ const Services = () => {
         <div className='absolute -top-1/2 md:-top-72 left-1 md:left-4 w-44 scale-75 md:scale-100'>
           <ServiceItem
             color='#60B19C'
-            price='350'
-            title='Brand Design'
-            desc='We create brand identities that shape consumer perception of your
-            brand to help you stand out from your competitors.'
+            price={brand.Price}
+            title={brand.Title}
+            desc={brand.description}
             link='/services/branding'
           />
         </div>
@@ -73,37 +71,32 @@ const Services = () => {
         <div className='absolute -bottom-1/4 md:bottom-0 left-1 md:left-4 w-44 scale-75 md:scale-100 xl:pt-40'>
           <ServiceItem
             color='#3A7A98'
-            price='50'
-            title='Marketing Design'
-            desc='We create marketing materials that communicates effectively to your
-            target audiences in order to boost sales.'
+            price={marketing.Price}
+            title={marketing.Title}
+            desc={marketing.description}
             link='/services/marketing'
           />
         </div>
       </div>
       {/* quiz intro section  */}
-      <QuizIntro className='pt-32 pb-16 px-2 md:mt-10' />
+      <QuizIntro className='pt-32 pb-16 px-2 md:mt-10' data={quiz} />
 
       {/* footer  */}
       <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-4 font-calibri'>
         <div className='flex justify-center xl:justify-between'>
           <h2 className='text-4xl uppercase tracking-wide py-2 relative'>
-            Why Us
+            {footer.Title}
             <span className='h-[2px] bg-white absolute bottom-0 w-3/4 left-1/2 transform -translate-x-1/2 rounded-full'></span>
           </h2>
           <SocialIconBar className='hidden xl:flex' />
         </div>
-        <p className='text-sm md:text-xl tracking-wide'>
-          The Creative Oracle understands both your business & design needs. We
-          are specialised in helping businesses achieve their business goals
-          through visual strategies.
-        </p>
+        <p className='text-sm md:text-xl tracking-wide'>{footer.Subtitle}</p>
         <ul className='text-sm md:text-xl w-full xl:w-1/2 space-y-4 list-inside list-disc'>
-          {whyUsList.map((listItem, index) => {
+          {footer.listElement.map((listItem) => {
             return (
-              <span key={index} className='flex'>
+              <span key={listItem.id} className='flex'>
                 <li></li>
-                <span className='pl-4'>{listItem}</span>
+                <span className='pl-4'>{listItem.text}</span>
               </span>
             );
           })}
@@ -115,6 +108,26 @@ const Services = () => {
 };
 
 export default Services;
+
+export async function getStaticProps() {
+  const res = await fetch(`${process.env.CMS_URL}/services`);
+  const footerRes = await fetch(`${process.env.CMS_URL}/homepage`);
+  const quiz = await fetch(`${process.env.CMS_URL}/resource`);
+
+  const data: any = await res.json();
+  const footerData: any = await footerRes.json();
+  const quizData: any = await quiz.json();
+
+  return {
+    props: {
+      web: data[0].pricing[0],
+      brand: data[1].pricing[0],
+      marketing: data[2].pricing[0],
+      footer: footerData.Footer[0],
+      quiz: quizData.Quiz,
+    },
+  };
+}
 
 const whyUsList = [
   'We are both a design & business consultant agency, thus we create graphics strategically to boost your business.',

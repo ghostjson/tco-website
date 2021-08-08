@@ -8,12 +8,13 @@ import SocialIconBar from 'src/components/SocialIconBar';
 import UserActions from 'src/components/UserActions';
 import { getElementById } from 'src/utils/getElementById';
 
-export default function Home() {
+export default function Home({ content, footer, data }) {
   const { state, dispatch } = useContext(ChatContext);
   const [activeQ, setActiveQ] = useState<question>();
 
   // changing the active question local state as state in context changes
   useEffect(() => {
+    console.log(data);
     setActiveQ(getElementById(state.questions, state.active_q));
   }, [state]);
 
@@ -61,14 +62,7 @@ export default function Home() {
               choices={activeQ && activeQ.choices}
             />
             <p className='font-agaramondPro md:text-2xl w-full xl:w-1/2 text-center xl:text-left'>
-              Welcome to The Creative Oracle! We are creatives that are
-              passionate about design & consultants that practice sound business
-              & marketing principles. We are inspired by both beauty and wisdom,
-              thus we go beyond creating attractive imagery to formulating
-              strategic design that is effective for your business. Our company
-              firmly believe in the design principle that form follows function
-              & good design yeilds tangible results. Connect with us to get to
-              know more about us.
+              {content}
             </p>
             <a
               href='https://api.whatsapp.com/send?phone=6583337803'
@@ -87,22 +81,18 @@ export default function Home() {
         <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-8 text-justify font-calibri'>
           <div className='flex justify-center xl:justify-between'>
             <h2 className='text-4xl uppercase tracking-wide py-2 relative'>
-              Why Us
+              {footer.Title}
               <span className='h-[2px] bg-white absolute bottom-0 w-3/4 left-1/2 transform -translate-x-1/2 rounded-full'></span>
             </h2>
             <SocialIconBar className='hidden xl:flex' />
           </div>
-          <p className='text-sm md:text-2xl tracking-wide'>
-            The Creative Oracle understands both your business & design needs.
-            We are specialised in helping businesses achieve their business
-            goals through visual strategies.
-          </p>
+          <p className='text-sm md:text-2xl tracking-wide'>{footer.Subtitle}</p>
           <ul className='text-sm md:text-2xl w-full xl:w-1/2 space-y-4 list-inside list-disc'>
-            {whyUsList.map((listItem, index) => {
+            {footer.listElement.map((listItem) => {
               return (
-                <span key={index} className='flex'>
+                <span key={listItem.id} className='flex'>
                   <li></li>
-                  <span className='pl-4'>{listItem}</span>
+                  <span className='pl-4'>{listItem.text}</span>
                 </span>
               );
             })}
@@ -114,9 +104,14 @@ export default function Home() {
   );
 }
 
-const whyUsList = [
-  'We are both a design & business consultant agency, thus we create graphics strategically to boost your business.',
-  'We have over 2 decades of experience working with businesses of various sizes, from start-ups to MNC.',
-  'We provide a project management platform for you to track your progress with ease.',
-  'We offer services that caters to all budgets.',
-];
+export async function getStaticProps() {
+  const res = await fetch(`${process.env.CMS_URL}/homepage`);
+  const data: any = await res.json();
+  return {
+    props: {
+      data: data,
+      content: data.content,
+      footer: data.Footer[0],
+    },
+  };
+}

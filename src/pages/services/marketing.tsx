@@ -3,7 +3,7 @@ import Layout from 'src/components/Layout';
 import ServiceFooter from 'src/components/ServiceFooter';
 import ServicePricing from 'src/components/ServicePricing';
 
-const Marketing = () => {
+const Marketing = ({ title, description, pricing, footer }) => {
   return (
     <Layout>
       <div
@@ -13,10 +13,9 @@ const Marketing = () => {
             'linear-gradient(223.76deg, #C96226 6.81%, #CD8334 89.5%)',
         }}>
         <div className='absolute top-20 px-10 md:hidden'>
-          <BoldHeading heading='Marketing Design' />
+          <BoldHeading heading={title} />
           <p className='font-agaramondPro text-center text-white mt-5'>
-            We create marketing materials that communicates effectively to your
-            target audiences in order to boost sales.
+            {description}
           </p>
         </div>
         <img
@@ -28,34 +27,50 @@ const Marketing = () => {
       <div className='mt-[10vh] md:mt-[20vh] xl:mt-[40vh] flex flex-col items-center p-4 xl:p-16'>
         <span className='relative py-2 hidden md:block'>
           <h2 className='text-4xl uppercase font-semibold text-[#3A7A98] text-center'>
-            Marketing Design
+            {title}
           </h2>
           <div className='absolute h-0.5 w-1/4 bottom-0 bg-[#3A7A98] left-1/2 transform -translate-x-1/2 rounded-full'></div>
         </span>
         <p className='text-lg xl:text-xl text-center mt-2 text-[#3A7A98]  hidden md:block'>
-          We create marketing materials that communicates effectively to your
-          target audiences in order to boost sales.
+          {description}
         </p>
         <ServicePricing service1={pricing1} service2={pricing2} />
       </div>
       {/* footer  */}
       <ServiceFooter
         className='bg-gradient-to-br from-[#C96226] to-[#CD8334]'
-        title='Custom ArtWork'
-        price='750'>
-        <p>
+        title={footer.Title}
+        subtitle={footer.Subtitle}>
+        {/* <p>
           A custom artwork is suitable for organizations that have specifiic
           themes or concepts to convey to their audiences. It is also ideal for
           businesses that want to sell to customers effectively like running
           online campaigns or marketing events.
         </p>
-        <p className='mt-6 md:text-xl'>Contact us for more information.</p>
+        <p className='mt-6 md:text-xl'>Contact us for more information.</p> */}
+        {footer.Content}
       </ServiceFooter>
     </Layout>
   );
 };
 
 export default Marketing;
+
+export async function getStaticProps() {
+  const res = await fetch(
+    `${process.env.CMS_URL}/services?Title=Marketing%20Design`
+  );
+  const resolved = await res.json();
+  const data: any = resolved[0];
+  return {
+    props: {
+      title: data.Title,
+      description: data.Description,
+      pricing: data.pricing,
+      footer: data.Footer[0],
+    },
+  };
+}
 
 // pricing data used in this page
 const pricing1 = {
