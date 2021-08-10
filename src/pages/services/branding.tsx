@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
 import ServiceFooter from 'src/components/ServiceFooter';
 import ServicePricing from 'src/components/ServicePricing';
 
 const Branding = ({ title, description, pricing, footer }) => {
-  useEffect(() => {
-    console.log(pricing);
-  }, []);
   return (
     <Layout>
       <div className='h-[50vh] xl:h-[80vh] relative flow-root bg-gradient-to-t from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
@@ -33,28 +31,25 @@ const Branding = ({ title, description, pricing, footer }) => {
         <p className='text-lg xl:text-xl text-center mt-0  pt-10 z-10 bg-white text-[#3E7F6E] hidden md:block'>
           {description}
         </p>
-        <ServicePricing service1={pricing1} service2={pricing2} />
+        <ServicePricing
+          service1={{
+            color: '#60B19C',
+            ...pricing[0],
+          }}
+          service2={{
+            color: '#3E7F6E',
+            ...pricing[1],
+          }}
+        />
       </div>
       {/* footer  */}
       <ServiceFooter
         className='bg-gradient-to-tr from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'
         title={footer.Title}
         subtitle={footer.Subtitle}>
-        {/* <p>
-          A custom brand identity design is suitable form buisness targeting end
-          consumers especially in F&B, online and offline retail & services with
-          string competition
-        </p>
-        <p className='mt-6 text-lg md:text-xl'>
-          This custom package may include a combination of designs suchh as
-          strategic logo design, buiseness card & letterhead design, premiums,
-          corporate invoice, slaes materials, packaging design, POS display &
-          social media graphics
-        </p>
-        <p className='mt-6 text-lg md:text-xl'>
-          Contact us for more information.
-        </p> */}
-        {footer.Content}
+        <ReactMarkdown className='md:text-xl flex flex-col gap-5'>
+          {footer.Content}
+        </ReactMarkdown>
       </ServiceFooter>
     </Layout>
   );
@@ -80,31 +75,3 @@ export async function getStaticProps() {
 }
 
 // pricing data used in this page
-const pricing1 = {
-  color: '#60B19C',
-  price: '350',
-  title: 'BASIC LOGO',
-  desc: 'A customized logo deisgn suitable for businesses that need a simple logo solution.',
-  steps: [
-    'Contact us & register account',
-    'Fill out an order form',
-    'Make payment & project begins',
-    'Select 1 of 2 logo design options',
-    'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format)',
-  ],
-};
-
-const pricing2 = {
-  color: '#3E7F6E',
-  price: '1750',
-  title: 'CORPORATE BRAND',
-  desc: 'A strategic brand identity design suitable for businesses that require a professional corporate image.',
-  steps: [
-    'Contact us & register account',
-    'Fill out an order form',
-    'Make payment & project begins',
-    'Review brand strategy proposal & select 1of 3 logo design options',
-    'Select 1 of 2 Corporate Identity design options. (Includes business card, letterhead & invoice design)',
-    'Project complete with handover. (Full color, black & white logo in AI, JPG, PNG & PDF format. Full color business card, letterhead & invoice ddesign in AI & PDF format)',
-  ],
-};

@@ -20,35 +20,35 @@ const QuizIntro = ({ className, data }: { className?: string; data: any }) => {
             .split('')
             .map((letter, key) =>
               letter === ' ' ? (
-                <span className='ml-1'></span>
+                <span className='ml-1' key={key}></span>
               ) : (
                 <span key={key}>{letter}</span>
               )
             )}
 
-          {'increase '.split('').map((letter, key) =>
+          {'increase'.split('').map((letter, key) =>
             letter === ' ' ? (
-              <span className='ml-1'></span>
+              <span className='ml-1' key={key}></span>
             ) : (
               <span className='text-[#7fafa8]' key={key}>
                 {letter}
               </span>
             )
           )}
-          {'cutback '.split('').map((letter, key) =>
+          {' cutback '.split('').map((letter, key) =>
             letter === ' ' ? (
-              <span className='ml-1'></span>
+              <span className='ml-1' key={key}></span>
             ) : (
               <span className='text-[#e45e1b]' key={key}>
                 {letter}
               </span>
             )
           )}
-          {' on your marketing budget?'
+          {'on your marketing budget?'
             .split('')
             .map((letter, key) =>
               letter === ' ' ? (
-                <span className='ml-1'></span>
+                <span className='ml-1' key={key}></span>
               ) : (
                 <span key={key}>{letter}</span>
               )

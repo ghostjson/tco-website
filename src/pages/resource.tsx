@@ -34,8 +34,6 @@ const Resource = ({ title, content, quiz }) => {
 export default Resource;
 
 export async function getStaticProps() {
-  console.log(`fetching to ${process.env.CMS_URL}/resource`);
-
   const res = await fetch(`${process.env.CMS_URL}/resource`);
   const data: any = await res.json();
   return {

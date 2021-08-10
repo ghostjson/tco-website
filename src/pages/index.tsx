@@ -14,7 +14,6 @@ export default function Home({ content, footer, data }) {
 
   // changing the active question local state as state in context changes
   useEffect(() => {
-    console.log(data);
     setActiveQ(getElementById(state.questions, state.active_q));
   }, [state]);
 
@@ -105,8 +104,6 @@ export default function Home({ content, footer, data }) {
 }
 
 export async function getStaticProps() {
-  console.log(`fetching to ${process.env.CMS_URL}/homepage`);
-
   const res = await fetch(`${process.env.CMS_URL}/homepage`);
   const data: any = await res.json();
   return {

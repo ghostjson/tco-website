@@ -14,10 +14,12 @@ const ServiceFooter = ({ children, title, subtitle, className }) => {
         className ? className : ''
       }`}>
       <div className='flex justify-left xl:justify-between mb-0'>
-        <h2 className='text-4xl uppercase tracking-wide text-left'>{title}</h2>
+        <h2 className='text-3xl md:text-4xl uppercase tracking-wide text-left'>
+          {title}
+        </h2>
         <SocialIconBar className='hidden xl:flex' />
       </div>
-      <div className='uppercase text-xl xl:text-2xl -mt-2'>{subtitle}</div>
+      <div className='uppercase text-xl xl:text-2xl -mt-1'>{subtitle}</div>
       <section className='text-lg md:text-xl tracking-wide mt-6 xl:w-10/12'>
         {children}
       </section>

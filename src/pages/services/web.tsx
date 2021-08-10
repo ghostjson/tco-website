@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
 import ServiceFooter from 'src/components/ServiceFooter';
@@ -31,28 +32,25 @@ const Web = ({ title, description, pricing, footer }) => {
           {description}
         </p>
         {/* pricing of web services  */}
-        <ServicePricing service1={pricing1} service2={pricing2} />
+        <ServicePricing
+          service1={{
+            color: '#775681',
+            ...pricing[0],
+          }}
+          service2={{
+            color: '#5A4262',
+            ...pricing[1],
+          }}
+        />
       </div>
       {/* footer  */}
       <ServiceFooter
         className='bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F]'
         title={footer.Title}
         subtitle={footer.Subtitle}>
-        {/* <p>
-          A custom brand identity design is suitable form buisness targeting end
-          consumers especially in F&B, online and offline retail & services with
-          string competition
-        </p>
-        <p className='mt-6 text-lg md:text-xl'>
-          This custom package may include a combination of designs suchh as
-          strategic logo design, buiseness card & letterhead design, premiums,
-          corporate invoice, sales materials, packaging design, POS display &
-          social media graphics
-        </p>
-        <p className='mt-6 text-lg md:text-xl'>
-          Contact us for more information.
-        </p> */}
-        {footer.Content}
+        <ReactMarkdown className='md:text-xl flex flex-col gap-5'>
+          {footer.Content}
+        </ReactMarkdown>
       </ServiceFooter>
     </Layout>
   );
@@ -61,7 +59,6 @@ const Web = ({ title, description, pricing, footer }) => {
 export default Web;
 
 export async function getStaticProps() {
-  console.log(`fetching to ${process.env.CMS_URL}/services?Title=Web%20Design`);
   const res = await fetch(`${process.env.CMS_URL}/services?Title=Web%20Design`);
   const resolved = await res.json();
   const data: any = resolved[0];
@@ -75,33 +72,3 @@ export async function getStaticProps() {
     revalidate: 60,
   };
 }
-
-// pricing data used in this page
-const pricing1 = {
-  color: '#775681',
-  price: '850',
-  title: 'BASIC Website',
-  desc: 'A simple website suitable for businesses that manage web content on their own.',
-  steps: [
-    'Contact us & register account.',
-    'Fill out an order form & purchase your domain and hosting.',
-    'Make payment & project begins.',
-    'Select 1 of 2 web design options.',
-    'Project complete with handover.',
-  ],
-};
-
-const pricing2 = {
-  color: '#5A4262',
-  price: '1850',
-  title: 'Smart Site',
-  desc: 'A dynamic website that captures the data of visitors suitable for businesses that want to track user behaviour',
-  steps: [
-    'Contact us & register account',
-    'Fill out an order form(includes 1 year domain & hosting)',
-    'Make payment & project begins',
-    'Review web strategy proposal & select 1of 3 web design options',
-    'Content Edits. (Max 2)',
-    'Project complete with handover.',
-  ],
-};

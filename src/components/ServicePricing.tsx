@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ServiceItem from 'src/components/ServiceItem';
 type PriceItem = {
-  price: string;
-  title: string;
-  desc: string;
+  Price: string;
+  Title: string;
+  description: string;
   color?: string;
-  steps: string[];
+  step: {
+    id: number;
+    content: string;
+    step: number;
+  }[];
 };
 
 type ServicePricingProps = {
@@ -18,14 +22,15 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
   service2,
 }) => {
   const [active, setActive] = useState({ service1: false, service2: false });
+
   return (
     <div className='my-10 w-full md:px-24 self-center '>
       <div className='flex space-x-2'>
         <div className='flex flex-col justify-between w-3/4 md:pr-10'>
           <ServiceItem
-            title={service1.title}
-            price={service1.price}
-            desc={service1.desc}
+            title={service1.Title}
+            price={service1.Price}
+            desc={service1.description}
             color={service1.color}
           />
           <button
@@ -39,9 +44,9 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         </div>
         <div className='flex flex-col justify-between w-3/4 md:pr-10'>
           <ServiceItem
-            title={service2.title}
-            price={service2.price}
-            desc={service2.desc}
+            title={service2.Title}
+            price={service2.Price}
+            desc={service2.description}
             color={service2.color}
           />
           <button
@@ -57,14 +62,14 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
       <div className='flex justify-between space-x-2'>
         <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4 md:pr-10'>
           {active.service1 &&
-            service1.steps.map((step, index) => {
+            service1.step.map((step, index) => {
               return (
                 <span
-                  key={index}
+                  key={step.id}
                   className='relative px-2'
                   style={{ color: service1.color }}>
                   <h6 className='font-bold'>STEP {index + 1}</h6>
-                  {step}
+                  {step.content}
                   <div className='absolute rounded-full h-1 w-1 bg-current top-2.5 left-0'></div>
                 </span>
               );
@@ -72,14 +77,14 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         </div>
         <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4 md:pr-10'>
           {active.service2 &&
-            service2.steps.map((step, index) => {
+            service2.step.map((step, index) => {
               return (
                 <span
-                  key={index}
+                  key={step.id}
                   className='relative px-2'
                   style={{ color: service2.color }}>
                   <h6 className='font-bold'>STEP {index + 1}</h6>
-                  {step}
+                  {step.content}
                   <div className='absolute rounded-full h-1 w-1 bg-current top-2.5 left-0'></div>
                 </span>
               );

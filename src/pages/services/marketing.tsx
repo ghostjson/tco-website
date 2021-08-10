@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
 import ServiceFooter from 'src/components/ServiceFooter';
@@ -34,21 +35,25 @@ const Marketing = ({ title, description, pricing, footer }) => {
         <p className='text-lg xl:text-xl text-center mt-2 text-[#3A7A98]  hidden md:block'>
           {description}
         </p>
-        <ServicePricing service1={pricing1} service2={pricing2} />
+        <ServicePricing
+          service1={{
+            color: '#3A7B99',
+            ...pricing[0],
+          }}
+          service2={{
+            color: '#27566C',
+            ...pricing[1],
+          }}
+        />
       </div>
       {/* footer  */}
       <ServiceFooter
         className='bg-gradient-to-br from-[#C96226] to-[#CD8334]'
         title={footer.Title}
         subtitle={footer.Subtitle}>
-        {/* <p>
-          A custom artwork is suitable for organizations that have specifiic
-          themes or concepts to convey to their audiences. It is also ideal for
-          businesses that want to sell to customers effectively like running
-          online campaigns or marketing events.
-        </p>
-        <p className='mt-6 md:text-xl'>Contact us for more information.</p> */}
-        {footer.Content}
+        <ReactMarkdown className='md:text-xl flex flex-col gap-5'>
+          {footer.Content}
+        </ReactMarkdown>
       </ServiceFooter>
     </Layout>
   );
@@ -57,10 +62,6 @@ const Marketing = ({ title, description, pricing, footer }) => {
 export default Marketing;
 
 export async function getStaticProps() {
-  console.log(
-    `fetching to ${process.env.CMS_URL}/services?Title=Marketing%20Design`
-  );
-
   const res = await fetch(
     `${process.env.CMS_URL}/services?Title=Marketing%20Design`
   );
@@ -76,30 +77,3 @@ export async function getStaticProps() {
     revalidate: 60,
   };
 }
-
-// pricing data used in this page
-const pricing1 = {
-  color: '#3A7B99',
-  price: '50',
-  title: 'Smart Template',
-  desc: 'A downloadable template suitable for organizations that want a fast solution & able to edit content on their own.',
-  steps: [
-    'Register account & browse store.',
-    'Purchase credits.',
-    'Select template & download. (Editable artwork in PSD/EPS/PPT or DOC format).',
-  ],
-};
-
-const pricing2 = {
-  color: '#27566C',
-  price: '350',
-  title: 'Template Plus',
-  desc: 'A template personalised by design professionals suit able for organizations that want an easy solution.',
-  steps: [
-    'Register account & browse store.',
-    'Purchase credits.',
-    'Select template & customize.',
-    'Fill out form & project begins.',
-    'Project complete with handover. (Editable artwork in PSD/EPS/PPT or DOC plus in PDF & JPG format.)',
-  ],
-};
