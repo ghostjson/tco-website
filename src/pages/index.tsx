@@ -105,6 +105,8 @@ export default function Home({ content, footer, data }) {
 }
 
 export async function getStaticProps() {
+  console.log(`fetching to ${process.env.CMS_URL}/homepage`);
+
   const res = await fetch(`${process.env.CMS_URL}/homepage`);
   const data: any = await res.json();
   return {

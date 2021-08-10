@@ -60,6 +60,10 @@ const Branding = ({ title, description, pricing, footer, data }) => {
 export default Branding;
 
 export async function getStaticProps() {
+  console.log(
+    `fetching to ${process.env.CMS_URL}/services?Title=Brand%20Design`
+  );
+
   const res = await fetch(
     `${process.env.CMS_URL}/services?Title=Brand%20Design`
   );

@@ -110,6 +110,9 @@ const Services = ({ web, brand, marketing, footer, quiz }) => {
 export default Services;
 
 export async function getStaticProps() {
+  console.log(`fetching to ${process.env.CMS_URL}/services`);
+  console.log(`fetching to ${process.env.CMS_URL}/homepage`);
+
   const res = await fetch(`${process.env.CMS_URL}/services`);
   const footerRes = await fetch(`${process.env.CMS_URL}/homepage`);
   const quiz = await fetch(`${process.env.CMS_URL}/resource`);

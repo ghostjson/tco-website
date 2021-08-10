@@ -61,6 +61,7 @@ const Web = ({ title, description, pricing, footer }) => {
 export default Web;
 
 export async function getStaticProps() {
+  console.log(`fetching to ${process.env.CMS_URL}/services?Title=Web%20Design`);
   const res = await fetch(`${process.env.CMS_URL}/services?Title=Web%20Design`);
   const resolved = await res.json();
   const data: any = resolved[0];

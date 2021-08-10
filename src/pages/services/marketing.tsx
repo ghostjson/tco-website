@@ -57,6 +57,10 @@ const Marketing = ({ title, description, pricing, footer }) => {
 export default Marketing;
 
 export async function getStaticProps() {
+  console.log(
+    `fetching to ${process.env.CMS_URL}/services?Title=Marketing%20Design`
+  );
+
   const res = await fetch(
     `${process.env.CMS_URL}/services?Title=Marketing%20Design`
   );
