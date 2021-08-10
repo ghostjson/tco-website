@@ -73,6 +73,7 @@ export async function getStaticProps() {
       pricing: data.pricing,
       footer: data.Footer[0],
     },
+    revalidate: 60,
   };
 }
 

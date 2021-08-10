@@ -129,6 +129,7 @@ export async function getStaticProps() {
       footer: footerData.Footer[0],
       quiz: quizData.Quiz,
     },
+    revalidate: 60,
   };
 }
 

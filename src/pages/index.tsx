@@ -115,5 +115,6 @@ export async function getStaticProps() {
       content: data.content,
       footer: data.Footer[0],
     },
+    revalidate: 60,
   };
 }

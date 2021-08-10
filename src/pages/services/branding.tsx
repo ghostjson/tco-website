@@ -1,10 +1,13 @@
+import { useEffect } from 'react';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
 import ServiceFooter from 'src/components/ServiceFooter';
 import ServicePricing from 'src/components/ServicePricing';
 
-const Branding = ({ title, description, pricing, footer, data }) => {
-  console.log(data);
+const Branding = ({ title, description, pricing, footer }) => {
+  useEffect(() => {
+    console.log(pricing);
+  }, []);
   return (
     <Layout>
       <div className='h-[50vh] xl:h-[80vh] relative flow-root bg-gradient-to-t from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
@@ -60,10 +63,6 @@ const Branding = ({ title, description, pricing, footer, data }) => {
 export default Branding;
 
 export async function getStaticProps() {
-  console.log(
-    `fetching to ${process.env.CMS_URL}/services?Title=Brand%20Design`
-  );
-
   const res = await fetch(
     `${process.env.CMS_URL}/services?Title=Brand%20Design`
   );
@@ -71,12 +70,12 @@ export async function getStaticProps() {
   const data: any = resolved[0];
   return {
     props: {
-      data: data,
       title: data.Title,
       description: data.Description,
       pricing: data.pricing,
       footer: data.Footer[0],
     },
+    revalidate: 60,
   };
 }
 

@@ -44,6 +44,7 @@ export async function getStaticProps() {
       content: data.Content,
       quiz: data.Quiz,
     },
+    revalidate: 60,
   };
 }
 
