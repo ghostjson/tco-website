@@ -46,9 +46,10 @@ const Services = ({ web, brand, marketing, footer, quiz }) => {
           className='bg-repeat xl:hidden z-10'
         />
       </div>
+
       {/* brand design service info */}
       <div className='relative'>
-        <div className='absolute -top-1/2 md:-top-72 left-1 md:left-4 w-44 scale-75 md:scale-100'>
+        <div className='absolute -top-1/2 md:-top-72 left-1 md:left-4 xl:-top-24 w-44 scale-75 md:scale-100'>
           <ServiceItem
             color='#60B19C'
             price={brand.Price}
@@ -68,7 +69,7 @@ const Services = ({ web, brand, marketing, footer, quiz }) => {
           className='bg-repeat xl:hidden -z-10 -mt-40 md:-mt-96'
         />
         {/* marketing design service info  */}
-        <div className='absolute -bottom-1/4 md:bottom-0 left-1 md:left-4 w-44 scale-75 md:scale-100 xl:pt-40'>
+        <div className='absolute -bottom-1/4 md:bottom-0 xl:-bottom-1/4 left-1 md:left-4 w-44 scale-75 md:scale-100 xl:pt-40'>
           <ServiceItem
             color='#3A7A98'
             price={marketing.Price}
@@ -78,8 +79,9 @@ const Services = ({ web, brand, marketing, footer, quiz }) => {
           />
         </div>
       </div>
+
       {/* quiz intro section  */}
-      <QuizIntro className='pt-32 pb-16 px-2 md:mt-10' data={quiz} />
+      <QuizIntro className='pt-32 pb-16 px-2 md:mt-10 xl:mt-80' data={quiz} />
 
       {/* footer  */}
       <div className='bg-black text-white p-16 px-8 xl:px-24 space-y-4 font-calibri'>
