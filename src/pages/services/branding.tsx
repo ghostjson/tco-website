@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { NextSeo } from 'next-seo';
 import ReactMarkdown from 'react-markdown';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
@@ -8,6 +8,10 @@ import ServicePricing from 'src/components/ServicePricing';
 const Branding = ({ title, description, pricing, footer }) => {
   return (
     <Layout>
+      <NextSeo
+        title='Brand Design'
+        description='We create brand identities that shape consumer perception of your brand to help you stand out from your competitors.'
+      />
       <div className='h-[50vh] xl:h-[80vh] relative flow-root bg-gradient-to-t from-[#5D8BA1] via-[#1D5F7B] to-[#175A77]'>
         <div className='absolute top-20 px-10 md:hidden'>
           <BoldHeading heading={title} />

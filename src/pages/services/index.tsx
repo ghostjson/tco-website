@@ -3,10 +3,12 @@ import BoldHeading from 'src/components/BoldHeading';
 import ServiceItem from 'src/components/ServiceItem';
 import SocialIconBar from 'src/components/SocialIconBar';
 import QuizIntro from 'src/components/QuizIntro';
+import { NextSeo } from 'next-seo';
 
 const Services = ({ web, brand, marketing, footer, quiz }) => {
   return (
     <Layout>
+      <NextSeo title='Services' />
       <div className='relative'>
         <BoldHeading
           heading='services'

@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import BoldHeading from 'src/components/BoldHeading';
@@ -8,6 +9,10 @@ import ServicePricing from 'src/components/ServicePricing';
 const Web = ({ title, description, pricing, footer }) => {
   return (
     <Layout>
+      <NextSeo
+        title='Web Design'
+        description='We create “Smart Sites” that provide user data for your website to help you make better decisions for your business'
+      />
       <div className='h-[50vh] xl:h-[60vh] relative flow-root bg-gradient-to-br from-[#3F3858] via-[#524765] to-[#60516F]'>
         <div className='absolute top-20 px-10 md:hidden'>
           <BoldHeading heading={title} />

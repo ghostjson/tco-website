@@ -1,5 +1,6 @@
 import { ChatContext, UPDATE_ACTIVE_QUESTION } from '@contexts/Chat';
 import { question } from '@customTypes/Chat';
+import { NextSeo } from 'next-seo';
 import { useState } from 'react';
 import { useContext, useEffect } from 'react';
 import Layout from 'src/components/Layout';

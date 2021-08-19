@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import ReactMarkdown from 'react-markdown';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
@@ -7,6 +8,10 @@ import ServicePricing from 'src/components/ServicePricing';
 const Marketing = ({ title, description, pricing, footer }) => {
   return (
     <Layout>
+      <NextSeo
+        title='Marketing Design'
+        description='We create marketing materials that communicates effectively to your target audiences in order to boost sales.'
+      />
       <div
         className='h-[45vh] md:h-[30vh] xl:h-[50vh] relative flow-root '
         style={{

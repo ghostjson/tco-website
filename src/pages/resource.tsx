@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import BlogPreview from 'src/components/BlogPreview';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
@@ -7,6 +8,7 @@ import SocialIconBar from 'src/components/SocialIconBar';
 const Resource = ({ title, content, quiz }) => {
   return (
     <Layout>
+      <NextSeo title='Resources' />
       <div className='h-[60vh] xl:h-screen  relative flow-root bg-gradient-to-tr from-[#783333] via-[#863939] to-[#B14C4C]'>
         <div className='absolute top-20 px-8 left-1/2 transform -translate-x-1/2 w-full xl:w-auto'>
           <BoldHeading heading={title} />

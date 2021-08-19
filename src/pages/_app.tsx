@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
 import ChatContextProvider from '@contexts/Chat';
 import '../styles/globals.scss';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../lib/SEO';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -18,6 +20,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ChatContextProvider>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </ChatContextProvider>
   );
