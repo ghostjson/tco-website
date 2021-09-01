@@ -50,7 +50,7 @@ export default function Home({ content, footer, data }) {
             <img
               src="/illustrations/women-illustration.png"
               alt="women meditating"
-              className="absolute -bottom-28 xl:-bottom-52 -right-4 w-[40rem] md:w-[35rem] xl:w-[40rem] z-20"
+              className="absolute -bottom-28 xl:-bottom-52 -right-4 w-[40rem] md:w-[32rem] xl:w-[40rem] z-20"
             />
             <Pill className="bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-1 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-[25rem] 2xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-lg rounded-tr-none xl:rounded-full xl:rounded-tr-none">
               {activeQ && activeQ.question}
