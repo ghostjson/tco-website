@@ -1,13 +1,11 @@
-import { ChatContext, UPDATE_ACTIVE_QUESTION } from "@contexts/Chat";
+import { useState, useContext, useEffect } from "react";
+import Layout from "@components/Layout";
+import Pill from "@components/Pill";
+import SocialIconBar from "@components/SocialIconBar";
+import UserActions from "@components/UserActions";
 import { question } from "@customTypes/Chat";
-import { NextSeo } from "next-seo";
-import { useState } from "react";
-import { useContext, useEffect } from "react";
-import Layout from "src/components/Layout";
-import Pill from "src/components/Pill";
-import SocialIconBar from "src/components/SocialIconBar";
-import UserActions from "src/components/UserActions";
-import { getElementById } from "src/utils/getElementById";
+import { getElementById } from "@utils/getElementById";
+import { ChatContext, UPDATE_ACTIVE_QUESTION } from "@contexts/Chat";
 
 export default function Home({ content, footer, data }) {
   const { state, dispatch } = useContext(ChatContext);
