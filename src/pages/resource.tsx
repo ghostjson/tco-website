@@ -1,11 +1,16 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import { NextSeo } from 'next-seo';
+
+import Footer from '@components/Footer';
 import BlogPreview from 'src/components/BlogPreview';
 import BoldHeading from 'src/components/BoldHeading';
 import Layout from 'src/components/Layout';
 import QuizIntro from 'src/components/QuizIntro';
 import SocialIconBar from 'src/components/SocialIconBar';
 
-const Resource = ({ title, content, quiz }) => {
+const Resource = ({ title, content, quiz, articles }) => {
   return (
     <Layout>
       <NextSeo title='Resources' />
@@ -28,7 +33,8 @@ const Resource = ({ title, content, quiz }) => {
       <QuizIntro className='px-2 mb-10' data={quiz} />
 
       {/* preview of all the blogs  */}
-      <BlogPreview blogData={dummyBlogs} />
+      <BlogPreview blogData={articles} />
+      <Footer />
     </Layout>
   );
 };
@@ -36,6 +42,27 @@ const Resource = ({ title, content, quiz }) => {
 export default Resource;
 
 export async function getStaticProps() {
+  // getting filenames from articles directory
+  const files = fs.readdirSync(path.join(process.cwd(), 'src/articles'));
+
+  // getting frontmatter and slug from each file
+  const articles = files.map((filename) => {
+    // generating slug
+    const slug = filename.replace('.md', '');
+
+    // getting frontmatter
+    const mdWithmeta = fs.readFileSync(
+      path.join(process.cwd(), 'src', 'articles', filename),
+      'utf-8'
+    );
+    const { data: frontmatter } = matter(mdWithmeta); // ? data contains the frontmatter
+
+    return {
+      slug,
+      ...frontmatter,
+    };
+  });
+
   const res = await fetch(`${process.env.CMS_URL}/resource`);
   const data: any = await res.json();
   return {
@@ -43,24 +70,8 @@ export async function getStaticProps() {
       title: data.Title,
       content: data.Content,
       quiz: data.Quiz,
+      articles,
     },
     revalidate: 60,
   };
 }
-
-const dummyBlogs = [
-  {
-    title: 'Discover the most effective brand image for your company.',
-    image: 'https://dummyimage.com/mediumrectangle',
-  },
-  {
-    title:
-      'Choosing the right color can affect your sales, find out how people did it',
-    image: 'https://dummyimage.com/mediumrectangle',
-  },
-  {
-    title:
-      'No traffic to your website? Make the most of your web assets to boost your website',
-    image: 'https://dummyimage.com/mediumrectangle',
-  },
-];
