@@ -7,14 +7,14 @@ const SocialIconBar = ({ className }: { className: string }) => {
         <img
           src='/icons/whatsapp.svg'
           alt='whatsapp icon'
-          className='h-12 w-12'
+          className='h-10 w-10'
         />
       </a>
       <a href='https://www.facebook.com/thecreativeoracle/' target='_blank'>
         <img
           src='/icons/facebook.svg'
           alt='facebook icon'
-          className='h-12 w-12'
+          className='h-10 w-10'
         />
       </a>
       <ShareIcon />
