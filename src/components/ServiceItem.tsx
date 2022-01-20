@@ -25,7 +25,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({
         <h2
           className='text-4xl xl:text-5xl font-semibold mb-2'
           style={{ color: color }}>
-          {price <= 0 ? 'FREE' : `$${price}`}
+          {parseInt('' + price) <= 0 ? 'FREE' : `$${price}`}
         </h2>
         <h4 className='font-bold font-calibri text-base xl:text-xl uppercase tracking-wider mb-0'>
           {title}

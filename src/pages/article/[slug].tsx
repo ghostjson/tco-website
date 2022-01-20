@@ -2,9 +2,19 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
+import Layout from '@components/Layout';
 
-export default function Article({ content }) {
-  return <ReactMarkdown className='markdown'>{content}</ReactMarkdown>;
+export default function Article({ content, meta }) {
+  return (
+    <Layout>
+      <img
+        src={meta.cover_image}
+        alt=''
+        className='w-full h-64 object-cover brightness-75'
+      />
+      <ReactMarkdown className='markdown'>{content}</ReactMarkdown>
+    </Layout>
+  );
 }
 
 export async function getStaticPaths() {
@@ -31,11 +41,12 @@ export async function getStaticProps(context) {
     'utf-8'
   );
 
-  const { content } = matter(mdWithMeta);
+  const { content, data: meta } = matter(mdWithMeta);
 
   return {
     props: {
       content,
+      meta,
     },
   };
 }
