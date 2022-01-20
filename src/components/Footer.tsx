@@ -15,7 +15,35 @@ const Footer = () => {
         are specialised in helping businesses achieve their business goals
         through visual strategies.
       </p>
-      <ul className='text-sm md:text-2xl w-full xl:w-1/2 space-y-4 list-inside list-disc'></ul>
+      <ul className='text-sm md:text-2xl w-full xl:w-1/2 space-y-4 list-inside list-disc'>
+        <span className='flex'>
+          <li></li>
+          <span className='pl-4'>
+            We are both a design & business consultant agency, thus we create
+            graphics strategically to boost your business.
+          </span>
+        </span>
+        <span className='flex'>
+          <li></li>
+          <span className='pl-4'>
+            We have over 2 decades of experience working with businesses of
+            various sizes, from start-ups to MNC.
+          </span>
+        </span>
+        <span className='flex'>
+          <li></li>
+          <span className='pl-4'>
+            We provide a project management platform for you to track your
+            progress with ease.
+          </span>
+        </span>
+        <span className='flex'>
+          <li></li>
+          <span className='pl-4'>
+            We offer services that caters to all budgets
+          </span>
+        </span>
+      </ul>
       <SocialIconBar className='flex xl:hidden justify-end' />
     </footer>
   );
