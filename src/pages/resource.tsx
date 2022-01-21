@@ -24,7 +24,7 @@ const Resource = ({ title, content, quiz, articles }) => {
         <img
           src='/illustrations/resource-banner.png'
           alt=''
-          className='absolute  -bottom-0 xl:-bottom-0'
+          className='absolute  -bottom-0 xl:-bottom-0 w-screen'
         />
       </div>
       <div className='relative bg-white -mt-2 z-20 h-20'>
