@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const QuizIntro = ({ className, data }: { className?: string; data: any }) => {
   return (
     <div
@@ -57,9 +59,11 @@ const QuizIntro = ({ className, data }: { className?: string; data: any }) => {
         <p className='text-sm text-justify md:text-base mt-1 leading-snug font-calibri md:px-40 xl:px-0 '>
           {data.content}
         </p>
-        <button className='bg-[#e45e1b] text-white p-2 uppercase mt-8 xl:mt-6 text-sm font-semibold self-center xl:self-auto'>
-          {data.button}
-        </button>
+        <Link href='/quiz'>
+          <button className='bg-[#e45e1b] text-white p-2 uppercase mt-8 xl:mt-6 text-sm font-semibold self-center xl:self-auto'>
+            {data.button}
+          </button>
+        </Link>
       </div>
     </div>
   );
