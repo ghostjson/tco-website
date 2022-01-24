@@ -1,6 +1,6 @@
 import ShareIcon from './ShareIcon';
 
-const SocialIconBar = ({ className }: { className: string }) => {
+const SocialIconBar = ({ className }: { className?: string }) => {
   return (
     <span className={`flex space-x-2 ${className}`}>
       <a href='https://api.whatsapp.com/send?phone=6583337803'>
