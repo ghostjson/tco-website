@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import Navbar from '@components/Navbar';
 import { questions, results } from 'src/constants/questions';
 import Link from 'next/link';
+import SocialIconBar from '@components/SocialIconBar';
 
 export default function Quiz() {
   const [question, setQuestion] = useState(0);
@@ -47,11 +48,19 @@ export default function Quiz() {
           </>
         ) : (
           <>
-            <ReactMarkdown className='flex flex-col items-start space-y-4 font-calibri text-lg'>
-              {results[getResult(score)]}
-            </ReactMarkdown>
+            <div className='flex flex-col xl:flex-row space-y-10 xl:space-y-0 xl:space-x-8 mt-20'>
+              <img
+                src='/illustrations/resource-women.jpg'
+                alt=''
+                className='h-64 mx-auto items-center'
+              />
+              <ReactMarkdown className='flex flex-col items-start space-y-4 font-calibri text-lg px-2 md:w-1/2 self-center'>
+                {results[getResult(score)]}
+              </ReactMarkdown>
+            </div>
+            <SocialIconBar className='self-end my-4' />
             <Link href='/'>
-              <a className='underline text-blue-700 self-center mt-10'>
+              <a className='underline text-blue-700 self-center'>
                 Go back to homepage
               </a>
             </Link>
