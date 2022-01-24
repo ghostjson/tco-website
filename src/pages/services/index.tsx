@@ -118,6 +118,7 @@ export async function getStaticProps() {
   const footerRes = await fetch(`${process.env.CMS_URL}/homepage`);
   const quiz = await fetch(`${process.env.CMS_URL}/resource`);
 
+  //parsing  data from the promise
   const data: any = await res.json();
   const footerData: any = await footerRes.json();
   const quizData: any = await quiz.json();
