@@ -8,14 +8,14 @@ const UserActions = ({
   className,
   choices,
 }: {
-  className: string;
+  className?: string;
   choices?: choice[];
 }) => {
   const { state, dispatch } = useContext(ChatContext);
   return (
-    <div className={`text-sm ${className}`}>
+    <div className={`text-sm my-2 ${className}`}>
       <span className='hidden xl:inline'>I want to:</span>
-      <div className='flex space-x-6 text-white'>
+      <div className='text-white space-y-3'>
         {choices &&
           choices.map((choice) => {
             return (
