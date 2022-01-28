@@ -21,6 +21,12 @@ const initialState: initialStateT = {
       id: 1,
       question: 'Hello, How may I help you?',
       choices: [
+        {
+          id: 0,
+          choice: 'View your Portfolio',
+          type: 'link',
+          url: '#',
+        },
         { id: 1, choice: 'Engage Service', type: 'trigger', trigger_q_id: 2 },
         { id: 2, choice: 'Browse this site', type: 'trigger', trigger_q_id: 3 },
       ],
