@@ -21,8 +21,7 @@ const Navbar = ({ dark }: { dark?: boolean }) => {
           return (
             <NavLink
               key={key}
-              path={link.path}
-              value={link.name}
+              link={link}
               onClickFn={() => setShowNav(!showNav)}
             />
           );
@@ -37,18 +36,35 @@ const Navbar = ({ dark }: { dark?: boolean }) => {
 
       {/* desktop navbar  */}
       <div
-        className={`bg-white absolute top-20 left-20 z-50 rounded hidden flex-col p-2 ${
+        className={`bg-white absolute top-20 left-20 z-50 rounded hidden flex-col  ${
           dark ? 'border-2 shadow' : ''
         } ${showNav ? 'xl:flex' : ''}`}>
         {NavLinks.map((link, key) => {
           return (
-            <Link href={link.path} key={key}>
-              <a
-                className='py-2 px-4 rounded transition-all hover:bg-black hover:text-white'
-                onClick={() => setShowNav((navState) => !navState)}>
-                {link.name}
-              </a>
-            </Link>
+            <>
+              <Link href={link.path} key={key}>
+                <a
+                  className={`py-2 px-4 transition-all hover:bg-black hover:text-white ${
+                    link.extra ? 'peer' : ''
+                  }`}
+                  onClick={() => setShowNav((navState) => !navState)}>
+                  {link.name}
+                </a>
+              </Link>
+              {link.extra && (
+                <div className='hidden peer-hover:flex  hover:flex flex-col absolute bg-white rounded ml-[6.3rem] mt-10'>
+                  {link.extra.map((extra, key) => (
+                    <Link href={link.path + extra.path} key={extra.path + key}>
+                      <a
+                        className='py-2 px-4 transition-all hover:bg-black hover:text-white peer rounded'
+                        onClick={() => setShowNav((navState) => !navState)}>
+                        {extra.name}
+                      </a>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </>
           );
         })}
       </div>
@@ -97,6 +113,20 @@ const NavLinks = [
   {
     name: 'Services',
     path: '/services',
+    extra: [
+      {
+        name: 'Web',
+        path: '/web',
+      },
+      {
+        name: 'Branding',
+        path: '/branding',
+      },
+      {
+        name: 'Marketing',
+        path: '/marketing',
+      },
+    ],
   },
   {
     name: 'Resource',
