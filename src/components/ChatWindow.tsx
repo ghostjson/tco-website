@@ -20,7 +20,7 @@ const ChatWindow = ({ closeAction }) => {
   const { state, dispatch } = useContext(ChatContext);
   const [activeQ, setActiveQ] = useState<question>(
     getQuestionById(state.questions, state.active_q)
-  );
+  ); // holds all messages
   const [messagequeue, setMessagequeue] = useState<React.ReactNode[]>([
     <BotBubble message={welcomeMessage} />,
   ]);
@@ -42,10 +42,12 @@ const ChatWindow = ({ closeAction }) => {
       <UserBubble choices={activeQ.choices} />,
     ]);
   }, [activeQ]);
+
+  //handlling the scroll to bottom of the chat window
   useEffect(() => {
     windowRef.current.scrollTo(0, windowRef.current.scrollHeight);
-    console.log('scrolling', windowRef.current.scrollHeight);
   }, [messagequeue]);
+
   return (
     <div className='h-[32rem] md:h-96 w-96 md:w-80 border-2 border-[#394566] bg-[#f0efea] flex flex-col '>
       <div className='font-bold py-1 px-3 w-full uppercase bg-[#394566] text-white flex items-center justify-between'>
