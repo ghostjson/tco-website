@@ -47,9 +47,9 @@ export default function Home({ content, footer, data }) {
               className='absolute -bottom-1.5  right-0 w-[48rem] md:w-[38rem] xl:w-[48rem] z-10'
             />
             <img
-              src='/illustrations/women-illustration.png'
+              src='/illustrations/women-illustration-2.png'
               alt='women meditating'
-              className='absolute -bottom-28 xl:-bottom-52 -right-4 w-[40rem] md:w-[32rem] xl:w-[40rem] z-20'
+              className='absolute -bottom-20 md:-bottom-32 xl:-bottom-48 -right-10 md:-right-52 w-[68rem] md:w-[50rem] xl:w-[60rem] z-20'
             />
             {/* <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-1 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-[25rem] 2xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-lg rounded-tr-none xl:rounded-full xl:rounded-tr-none'>
               {activeQ && activeQ.question}
