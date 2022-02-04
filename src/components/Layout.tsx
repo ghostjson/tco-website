@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className='relative'>
       <Navbar />
       <div>{children}</div>
-      <Chat />
+      {/* <Chat /> */}
     </div>
   );
 };
