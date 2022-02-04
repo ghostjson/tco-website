@@ -7,6 +7,7 @@ import SocialIconBar from '@components/SocialIconBar';
 import { question } from '@customTypes/Chat';
 import { getQuestionById } from '@utils/getQuestionById';
 import { ChatContext, UPDATE_ACTIVE_QUESTION } from '@contexts/Chat';
+import ChatWindow from '@components/ChatWindow';
 
 export default function Home({ content, footer, data }) {
   const { state, dispatch } = useContext(ChatContext);
@@ -44,26 +45,28 @@ export default function Home({ content, footer, data }) {
             <img
               src='/illustrations/illus-bgline.svg'
               alt='illustration background stroke line'
-              className='absolute -bottom-1.5  right-0 w-[48rem] md:w-[38rem] xl:w-[48rem] z-10'
+              className='absolute -bottom-2.5  left-0 w-[48rem] md:w-[38rem] xl:w-[48rem] z-10'
             />
             <img
               src='/illustrations/women-illustration-2.png'
               alt='women meditating'
-              className='absolute -bottom-20 md:-bottom-32 xl:-bottom-48 -right-10 md:-right-52 w-[68rem] md:w-[50rem] xl:w-[60rem] z-20'
+              className='absolute -bottom-20 md:-bottom-32 xl:-bottom-48 left-10 md:left-10 w-[68rem] md:w-[50rem] xl:w-[60rem] z-20'
             />
             {/* <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-1 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-[25rem] 2xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-lg rounded-tr-none xl:rounded-full xl:rounded-tr-none'>
               {activeQ && activeQ.question}
             </Pill> */}
           </div>
-          <div className='h-auto bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-24 py-16 px-6 md:px-16 justify-between space-y-8'>
+          <div className='min-h-[50vh] bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-24 py-16 px-6 md:px-16 justify-between space-y-8'>
             {/* <UserActions
               className='self-center z-30'
               choices={activeQ && activeQ.choices}
             /> */}
             <span> </span>
-            <p className='font-agaramondPro md:text-2xl w-full xl:w-1/2 text-center xl:text-left'>
-              {content}
-            </p>
+            {/* <p className='font-agaramondPro md:text-2xl w-full xl:w-1/2 text-center xl:text-left'>
+                {content}
+              </p> */}
+
+            <ChatWindow className='mx-auto xl:absolute -top-full z-50 rounded-xl border-none right-24 w-auto xl:w-[30rem]' />
             <a
               href='https://api.whatsapp.com/send?phone=6583337803'
               className='self-center xl:hidden'>

@@ -9,7 +9,13 @@ import { getQuestionById } from '@utils/getQuestionById';
 import { question } from '@customTypes/Chat';
 import UserBubble from './UserBubble';
 
-const ChatWindow = ({ closeAction }) => {
+const ChatWindow = ({
+  closeAction,
+  className,
+}: {
+  closeAction?: () => void;
+  className?: string;
+}) => {
   const windowRef = useRef<HTMLDivElement>();
   const { state, dispatch } = useContext(ChatContext);
   const [activeQ, setActiveQ] = useState<question>(
@@ -43,10 +49,15 @@ const ChatWindow = ({ closeAction }) => {
   }, [messagequeue]);
 
   return (
-    <div className='h-[32rem] md:h-[37rem] w-80 md:w-96 border-2 border-[#394566] bg-[#f0efea] flex flex-col '>
+    <div
+      className={`h-[32rem] md:h-[37rem] border-2 border-[#394566] bg-[#f0efea] flex flex-col ${
+        className ? className : ''
+      }`}>
       <div className='font-bold py-1 px-3 w-full uppercase bg-[#394566] text-white flex items-center justify-between'>
         <span className='font-calibri text-sm'>Chat Window</span>
-        <AiOutlineClose className='cursor-pointer' onClick={closeAction} />
+        {closeAction && (
+          <AiOutlineClose className='cursor-pointer' onClick={closeAction} />
+        )}
       </div>
       <div className='p-4 flex items-center space-x-3 bg-white'>
         <div className='rounded-full relative p-2  bg-[#394566]' tabIndex={-1}>
