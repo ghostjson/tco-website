@@ -28,7 +28,13 @@
       @apply text-4xl font-agaramondPro font-bold;
     }
     li {
-      @apply list-disc mx-2 xl:mx-10;
+      @apply mx-2 xl:mx-10;
+    }
+    ul li {
+      @apply list-disc;
+    }
+    ol li {
+      @apply list-decimal;
     }
     p {
       @apply my-5 text-lg;

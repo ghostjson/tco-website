@@ -19,15 +19,14 @@ Here are some questions to consider:
 1. Why would a consumer choose to your brand rather than your competitor's?
 2. What are your key selling points & how do you effectively communicate that to your target audience?
 3. What are your customers' pain points & how is your business addressing those needs?
-   These are questions to consider before even creating your logo. Afterall, a logo is
-   much more than an image, it is a symbol that represents your business.
-   Should I invest in brand design for my company?
 
-A. My business is profitable, but its growth rate is slow.  
-B. I am selling a product/service that has great demand in a highly competitive environment.  
-C. I want my business to stay competitive and take greater market share.  
-D. My business is successful and is ready to scale.  
-E. I am a startup company with a unique or superior product than my competitors.
+These are questions to consider before even creating your logo. Afterall, a logo is much more than an image, it is a symbol that represents your business. Should I invest in brand design for my company?
+
+1. My business is profitable, but its growth rate is slow.
+2. I am selling a product/service that has great demand in a highly competitive environment.
+3. I want my business to stay competitive and take greater market share.
+4. My business is successful and is ready to scale.
+5. I am a startup company with a unique or superior product than my competitors.
 
 If your business belongs in any of these categories above, it is likely that your business requires a professional brand strategy.
 
