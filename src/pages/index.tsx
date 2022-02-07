@@ -66,7 +66,7 @@ export default function Home({ content, footer, data }) {
                 {content}
               </p> */}
 
-            <ChatWindow className='mx-auto xl:absolute -top-full z-50 rounded-xl border-none right-24 w-auto xl:w-[30rem]' />
+            <ChatWindow className='mx-auto xl:absolute -top-full z-30 rounded-xl border-none right-24 w-auto xl:w-[30rem]' />
             <a
               href='https://api.whatsapp.com/send?phone=6583337803'
               className='self-center xl:hidden'>
