@@ -55,6 +55,7 @@ export default function Home({ content, footer, data }) {
             {/* <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-1 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-[25rem] 2xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-lg rounded-tr-none xl:rounded-full xl:rounded-tr-none'>
               {activeQ && activeQ.question}
             </Pill> */}
+            <ChatWindow className='mx-auto absolute hidden xl:block z-30 left-[70rem] -bottom-full xl:top-1/2 rounded-xl border-none transform -translate-x-1/2 w-[90%] xl:w-[30rem]' />
           </div>
           <div className='min-h-[50vh] bg-white relative flex flex-col xl:flex-row-reverse pt-32 md:pt-24 py-16 px-6 md:px-16 justify-between space-y-8'>
             {/* <UserActions
@@ -66,7 +67,7 @@ export default function Home({ content, footer, data }) {
                 {content}
               </p> */}
 
-            <ChatWindow className='mx-auto xl:absolute -top-full z-30 rounded-xl border-none right-24 w-auto xl:w-[30rem]' />
+            <ChatWindow className='mx-auto block xl:hidden xl:absolute -top-full z-30 rounded-xl border-none right-24 w-auto xl:w-[30rem]' />
             <a
               href='https://api.whatsapp.com/send?phone=6583337803'
               className='self-center xl:hidden'>
