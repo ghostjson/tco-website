@@ -1,5 +1,6 @@
-import { question } from '@customTypes/Chat';
 import React, { createContext, useReducer } from 'react';
+
+import { question } from '@customTypes/Chat';
 
 type initialStateT = {
   active_q: number;
@@ -24,8 +25,8 @@ const initialState: initialStateT = {
         {
           id: 0,
           choice: 'View your Portfolio',
-          type: 'link',
-          url: '#',
+          type: 'action',
+          action: () => {},
         },
         { id: 1, choice: 'Engage Service', type: 'trigger', trigger_q_id: 2 },
         { id: 2, choice: 'Browse this site', type: 'trigger', trigger_q_id: 3 },

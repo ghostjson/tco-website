@@ -4,7 +4,7 @@ export type question = {
   choices: choice[];
 };
 
-export type choice = triggerChoice | linkedChoice;
+export type choice = triggerChoice | linkedChoice | actionChoice;
 
 type baseChoice = {
   id: number;
@@ -19,4 +19,9 @@ interface triggerChoice extends baseChoice {
 interface linkedChoice extends baseChoice {
   type: 'link';
   url: string;
+}
+
+interface actionChoice extends baseChoice {
+  type: 'action';
+  action: () => void;
 }
