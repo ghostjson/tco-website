@@ -31,7 +31,8 @@ const UserActions = ({
                     onClick={() => {
                       dispatch({
                         type: UPDATE_ACTIVE_QUESTION,
-                        payload: choice.trigger_q_id,
+                        payload:
+                          choice.type === 'trigger' ? choice.trigger_q_id : 2,
                       });
                     }}
                     className='cursor-pointer'>
@@ -46,7 +47,7 @@ const UserActions = ({
             );
           })}
 
-        <a href='https://api.whatsapp.com/send?phone=6583337803'>
+        <a href='https://api.whatsapp.com/send?phone=6282268472818'>
           <Pill className='px-8 pl-10 py-2 bg-[#A5904F] relative  hidden xl:block rounded-full'>
             <img
               src='/icons/whatsapp-legacy.svg'
