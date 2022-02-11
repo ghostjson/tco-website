@@ -67,7 +67,7 @@ const ChatWindow = ({
         <span className='font-calibri text-lg'>The Creative Oracle</span>
       </div>
       <div
-        className='overflow-x-hidden overflow-y-scroll py-4 scroll-smooth'
+        className='overflow-x-hidden overflow-y-scroll py-4 scroll-smooth h-[30rem]'
         ref={windowRef}>
         {messagequeue.map((message, index) => (
           <div key={index}>{message}</div>
