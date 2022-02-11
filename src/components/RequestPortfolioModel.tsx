@@ -34,7 +34,7 @@ const RequestPortfolioModel = () => {
     <div className='absolute inset-0 z-[100]'>
       <div className='relative w-full h-screen'>
         <div
-          className='bg-black bg-opacity-30 w-full h-full absolute'
+          className='bg-black bg-opacity-30 w-full h-[10000%] absolute'
           onClick={() => toggleModel()}></div>
         <div className='bg-white p-4 flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
           <h1 className='text-4xl font-bold text-center font-agaramondPro px-10 pb-2'>
