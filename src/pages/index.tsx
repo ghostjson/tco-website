@@ -69,7 +69,7 @@ export default function Home({ content, footer, data }) {
 
             <ChatWindow className='mx-auto block xl:hidden xl:absolute -top-full z-30 rounded-xl border-none right-24 w-auto xl:w-[30rem]' />
             <a
-              href='https://api.whatsapp.com/send?phone=6583337803'
+              href='https://api.whatsapp.com/send?phone=6282268472818'
               className='self-center xl:hidden'>
               <Pill className='bg-gray-800 rounded-xl relative px-6 py-1 pl-10 text-white text-sm xl:hidden'>
                 <img
