@@ -28,29 +28,16 @@ export default function Home({ content, footer, data }) {
     <Layout>
       <div>
         <main className='overflow-x-hidden'>
-          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[25rem] md:min-h-[35rem] xl:min-h-[40rem]  flex items-start justify-center pt-12  md:pt-24 relative'>
+          <div className='gradient-mobile xl:gradient-desktop p-8 min-h-[20rem] md:min-h-[35rem] xl:min-h-[40rem]  flex items-start justify-center pt-12  md:pt-24 relative'>
             <img
               src='/images/main-logo.png'
               alt='main-logo'
               className='h-8 md:h-14'
             />
-            <svg height='15' className='absolute -bottom-1 left-0 w-full'>
-              <path
-                d='M 00 15 q 200 -20 2000 0'
-                stroke='#b4c3d0'
-                strokeWidth='5'
-                fill='white'
-              />
-            </svg>
-            <img
-              src='/illustrations/illus-bgline.svg'
-              alt='illustration background stroke line'
-              className='absolute -bottom-2.5  left-0 w-[48rem] md:w-[38rem] xl:w-[48rem] z-10'
-            />
             <img
               src='/illustrations/women-illustration-2.png'
               alt='women meditating'
-              className='absolute -bottom-20 md:-bottom-32 xl:-bottom-48 left-10 md:left-10 w-[68rem] md:w-[50rem] xl:w-[60rem] z-20'
+              className='absolute -bottom-[3.8rem] md:-bottom-32 xl:-bottom-36 w-[70rem] md:w-[50rem] xl:w-[60rem] z-20 md:left-10'
             />
             {/* <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-1 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-[25rem] 2xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-lg rounded-tr-none xl:rounded-full xl:rounded-tr-none'>
               {activeQ && activeQ.question}
