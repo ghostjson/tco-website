@@ -41,6 +41,7 @@ const Marketing = ({ title, description, pricing, footer }) => {
           {description}
         </p>
         <ServicePricing
+          available={false}
           service1={{
             color: '#3A7B99',
             ...pricing[0],

@@ -15,14 +15,16 @@ type PriceItem = {
 type ServicePricingProps = {
   service1: PriceItem;
   service2: PriceItem;
+  available?: boolean;
 };
 
 const ServicePricing: React.FC<ServicePricingProps> = ({
   service1,
   service2,
+  available = true,
 }) => {
   const [active, setActive] = useState({ service1: false, service2: false });
-
+  console.log(available);
   return (
     <div className='my-10 w-full md:px-24 self-center '>
       <div className='flex space-x-2'>
@@ -62,33 +64,47 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
       <div className='flex justify-between space-x-2'>
         <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4 md:pr-10'>
           {active.service1 &&
-            service1.step.map((step, index) => {
-              return (
-                <span
-                  key={step.id}
-                  className='relative px-2'
-                  style={{ color: service1.color }}>
-                  <h6 className='font-bold'>STEP {index + 1}</h6>
-                  {step.content}
-                  <div className='absolute rounded-full h-1 w-1 bg-current top-2.5 left-0'></div>
-                </span>
-              );
-            })}
+            (available ? (
+              service1.step.map((step, index) => {
+                return (
+                  <span
+                    key={step.id}
+                    className='relative px-2'
+                    style={{ color: service1.color }}>
+                    <h6 className='font-bold'>STEP {index + 1}</h6>
+                    {step.content}
+                    <div className='absolute rounded-full h-1 w-1 bg-current top-2.5 left-0'></div>
+                  </span>
+                );
+              })
+            ) : (
+              <div className='font-agaramondPro'>
+                This service will be available shortly. Contact us for more
+                details
+              </div>
+            ))}
         </div>
         <div className='flex flex-col items-start space-y-6 mt-8 w-1/2 xl:w-2/4 md:pr-10'>
           {active.service2 &&
-            service2.step.map((step, index) => {
-              return (
-                <span
-                  key={step.id}
-                  className='relative px-2'
-                  style={{ color: service2.color }}>
-                  <h6 className='font-bold'>STEP {index + 1}</h6>
-                  {step.content}
-                  <div className='absolute rounded-full h-1 w-1 bg-current top-2.5 left-0'></div>
-                </span>
-              );
-            })}
+            (available ? (
+              service2.step.map((step, index) => {
+                return (
+                  <span
+                    key={step.id}
+                    className='relative px-2'
+                    style={{ color: service2.color }}>
+                    <h6 className='font-bold'>STEP {index + 1}</h6>
+                    {step.content}
+                    <div className='absolute rounded-full h-1 w-1 bg-current top-2.5 left-0'></div>
+                  </span>
+                );
+              })
+            ) : (
+              <div className='font-agaramondPro'>
+                This service will be available shortly. Contact us for more
+                details
+              </div>
+            ))}
         </div>
       </div>
     </div>
