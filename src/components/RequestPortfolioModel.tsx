@@ -4,25 +4,25 @@ import useStore from 'src/store';
 const RequestPortfolioModel = () => {
   const toggleModel = useStore((state) => state.toggleModel);
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [preference, setPreference] = useState('Web');
   const [errors, setErrors] = useState('');
 
   const generateLink = () => {
-    if (name === '' || phone === '') {
+    if (name === '' || email === '') {
       setErrors('Please fill all fields');
       setTimeout(() => {
         setErrors('');
       }, 3000);
     }
 
-    if (name !== '' && phone !== '') {
+    if (name !== '' && email !== '') {
       const link =
-        'https://api.whatsapp.com/send?phone=6282268472818&text=' +
+        'https://api.whatsapp.com/send?phone=6583337803&text=' +
         'Hi%2C%20%2AThe%20Creative%20Oracle%2A.%20%0AI%20am%20interested%20in%20your%20portfolio.The%20following%20are%20my%20details%0A%2AName%2A%20%3A%20' +
         name +
-        '%0A%2APhone%2A%3A%20' +
-        phone +
+        '%0A%2AEmail%2A%3A%20' +
+        email +
         '%0A%2APortfolio%20Preference%2A%3A%20' +
         preference;
 
@@ -37,7 +37,7 @@ const RequestPortfolioModel = () => {
           className='bg-black bg-opacity-30 w-full h-[10000%] absolute'
           onClick={() => toggleModel()}></div>
         <div className='bg-white p-4 flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-          <h1 className='text-4xl font-bold text-center font-agaramondPro px-10 pb-2'>
+          <h1 className='text-4xl text-center font-agaramondPro px-10 pb-2'>
             Portfolio Request
           </h1>
           {errors !== '' && (
@@ -54,14 +54,14 @@ const RequestPortfolioModel = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor='phone'>Phone No:</label>
+          <label htmlFor='email'>Email:</label>
           <input
             className='border-2 p-2 rounded mb-2'
-            type='text'
-            name='phone'
-            id='phone'
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            type='email'
+            name='email'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor='portolio'>Portfolio Preference</label>
           <select
