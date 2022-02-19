@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import { welcomeMessage } from 'src/constants/quiz-message';
 
-import UserActions from '@components/UserActions';
+import { welcomeMessage } from 'src/constants/quiz-message';
 import { ChatContext, UPDATE_ACTIVE_QUESTION } from '@contexts/Chat';
 import BotBubble from './BotBubble';
 import { getQuestionById } from '@utils/getQuestionById';
