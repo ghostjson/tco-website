@@ -28,7 +28,7 @@ export default function Home({ content, footer, data }) {
     <Layout>
       <div>
         <main className='overflow-x-hidden'>
-          <div className='gradient-mobile xl:gradient-desktop p-8 min-h-[20rem] md:min-h-[35rem] xl:min-h-[40rem]  flex items-start justify-center pt-12  md:pt-24 relative'>
+          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[20rem] md:min-h-[35rem] xl:min-h-[40rem]  flex items-start justify-center pt-12  md:pt-24 relative'>
             <img
               src='/images/main-logo.png'
               alt='main-logo'
