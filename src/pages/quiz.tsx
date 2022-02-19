@@ -22,7 +22,7 @@ export default function Quiz() {
   return (
     <>
       <Navbar dark />
-      <div className='h-screen flex flex-col  justify-center px-10 xl:w-1/2 mx-auto'>
+      <div className='h-screen flex flex-col  justify-center px-10 py-4 my-20 xl:my-auto xl:w-1/2 mx-auto'>
         {question < limit ? (
           <>
             <h6 className='text-xl font-agaramondPro'>
@@ -52,7 +52,7 @@ export default function Quiz() {
               <img
                 src='/illustrations/resource-women.jpg'
                 alt=''
-                className='h-64 mx-auto items-center'
+                className='h-36 md:h-64 mx-auto items-center'
               />
               <ReactMarkdown className='flex flex-col items-start space-y-4 font-calibri text-lg px-2 md:w-1/2 self-center'>
                 {results[getResult(score)]}
