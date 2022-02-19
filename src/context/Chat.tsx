@@ -21,55 +21,74 @@ const initialState: initialStateT = {
     {
       id: 1,
       question: 'Hello, How may I help you?',
-      choices: [
-        {
-          id: 0,
-          choice: 'View your Portfolio',
-          type: 'action',
-          action: () => {},
-        },
-        { id: 1, choice: 'Engage Service', type: 'trigger', trigger_q_id: 2 },
-        { id: 2, choice: 'Browse this site', type: 'trigger', trigger_q_id: 3 },
-      ],
+      choices: {
+        intro: 'I want to:',
+        choices: [
+          {
+            id: 0,
+            choice: 'View your Portfolio',
+            type: 'action',
+            action: () => {},
+          },
+          { id: 1, choice: 'Engage Service', type: 'trigger', trigger_q_id: 2 },
+          {
+            id: 2,
+            choice: 'Browse this site',
+            type: 'trigger',
+            trigger_q_id: 3,
+          },
+        ],
+      },
     },
     {
       id: 2,
       question:
         'We will be most happy to provide you with the necessary service. What service are you interested in? You can also contact us directly',
-      choices: [
-        { id: 1, choice: 'Web', type: 'link', url: '/services/web' },
-        { id: 2, choice: 'Branding', type: 'link', url: '/services/branding' },
-        {
-          id: 3,
-          choice: 'Marketing',
-          type: 'link',
-          url: '/services/marketing',
-        },
-        {
-          id: 4,
-          choice: 'Email',
-          type: 'link',
-          url: 'mailto:sample@email.com',
-        },
-      ],
+      choices: {
+        intro: `I'm interested in:`,
+        choices: [
+          { id: 1, choice: 'Web', type: 'link', url: '/services/web' },
+          {
+            id: 2,
+            choice: 'Branding',
+            type: 'link',
+            url: '/services/branding',
+          },
+          {
+            id: 3,
+            choice: 'Marketing',
+            type: 'link',
+            url: '/services/marketing',
+          },
+          {
+            id: 4,
+            choice: 'Email',
+            type: 'link',
+            url: 'mailto:sample@email.com',
+          },
+        ],
+      },
     },
     {
       id: 3,
       question: 'What would you like to see?',
-      choices: [
-        {
-          id: 1,
-          choice: 'Services',
-          type: 'link',
-          url: '/services',
-        },
-        {
-          id: 2,
-          choice: 'Resources',
-          type: 'link',
-          url: '/resource',
-        },
-      ],
+      choices: {
+        intro: 'I want to find out more about your:',
+        choices: [
+          {
+            id: 1,
+            choice: 'Services',
+            type: 'link',
+            url: '/services',
+          },
+          {
+            id: 2,
+            choice: 'Resources',
+            type: 'link',
+            url: '/resource',
+          },
+        ],
+      },
     },
   ],
 };

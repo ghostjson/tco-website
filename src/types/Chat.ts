@@ -1,7 +1,10 @@
 export type question = {
   id: number;
   question: string;
-  choices: choice[];
+  choices: {
+    intro: string;
+    choices: choice[];
+  };
 };
 
 export type choice = triggerChoice | linkedChoice | actionChoice;
