@@ -32,12 +32,12 @@ export default function Home({ content, footer, data }) {
             <img
               src='/images/main-logo.png'
               alt='main-logo'
-              className='h-8 md:h-14'
+              className='h-8 md:h-14 mt-10 md:mt-0'
             />
             <img
               src='/illustrations/women-illustration-2.png'
               alt='women meditating'
-              className='absolute -bottom-[3.8rem] md:-bottom-32 xl:-bottom-36 w-[70rem] md:w-[50rem] xl:w-[60rem] z-20 md:left-10 scale-150 md:scale-100'
+              className='absolute -bottom-[3.8rem] md:-bottom-32 xl:-bottom-36 w-[70rem] md:w-[50rem] xl:w-[60rem] z-20 left-10 scale-125 md:scale-100'
             />
             {/* <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-1 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-[25rem] 2xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-lg rounded-tr-none xl:rounded-full xl:rounded-tr-none'>
               {activeQ && activeQ.question}
