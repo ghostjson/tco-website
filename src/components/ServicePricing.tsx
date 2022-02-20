@@ -79,8 +79,8 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               })
             ) : (
               <div className='font-agaramondPro'>
-                This service will be available shortly. Contact us for more
-                details
+                This service will be available shortly. <br /> Contact us for
+                more details.
               </div>
             ))}
         </div>
@@ -101,8 +101,8 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               })
             ) : (
               <div className='font-agaramondPro'>
-                This service will be available shortly. Contact us for more
-                details
+                This service will be available shortly. <br /> Contact us for
+                more details.
               </div>
             ))}
         </div>
