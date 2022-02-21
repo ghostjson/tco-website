@@ -28,16 +28,16 @@ export default function Home({ content, footer, data }) {
     <Layout>
       <div>
         <main className='overflow-x-hidden'>
-          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[20rem] md:min-h-[35rem] xl:min-h-[40rem]  flex items-start justify-center pt-12  md:pt-24 relative'>
+          <div className='bg-gradient-to-tr from-[rgb(83,83,103)] to-[rgb(44,62,76)] p-8 min-h-[27rem] md:min-h-[35rem] xl:min-h-[40rem]  flex items-start justify-center pt-12  md:pt-24 relative'>
             <img
               src='/images/main-logo.png'
               alt='main-logo'
-              className='h-8 md:h-14 mt-14 md:mt-0'
+              className='h-8 md:h-14 mt-20 md:mt-0'
             />
             <img
               src='/illustrations/women-illustration-2.png'
               alt='women meditating'
-              className='absolute -bottom-[3.8rem] md:-bottom-32 xl:-bottom-36 w-[70rem] md:w-[50rem] xl:w-[60rem] z-20 left-10 scale-125 md:scale-100'
+              className='absolute -bottom-[1.3rem] md:-bottom-24 xl:-bottom-36 w-[70rem] md:w-[50rem] xl:w-[60rem] z-20 left-9 scale-125 md:scale-100'
             />
             {/* <Pill className='bg-[#E0E3D2] text-[.7rem] md:text-base absolute left-1 md:right-2/6 p-3 md:px-4 md:left-auto xl:md-auto xl:right-[25rem] 2xl:right-1/4 top-3/4 md:top-2/3 z-30  shadow-2xl max-w-[50vw] xl:max-w-md rounded-lg rounded-tr-none xl:rounded-full xl:rounded-tr-none'>
               {activeQ && activeQ.question}
