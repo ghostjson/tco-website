@@ -32,7 +32,7 @@ export default function Home({ content, footer, data }) {
             <img
               src='/images/main-logo.png'
               alt='main-logo'
-              className='h-8 md:h-14 mt-10 md:mt-0'
+              className='h-8 md:h-14 mt-14 md:mt-0'
             />
             <img
               src='/illustrations/women-illustration-2.png'
