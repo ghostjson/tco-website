@@ -8,6 +8,7 @@ cover_image: '/images/article-covers/article_3.jpeg'
 # Is your website mainly informative? Maximize your resources wisely and do more with “Smartsites”
 
 Thanks to technology today we are able to reach out to our target audience more effectively and efficiently through websites. However, many people spend thousands of dollars on their websites with the main purpose of communicating information and basic e-commerce functions, failing to maximize the power of technology to their advantage.
+
 Just like setting up a physical store engaging consumers with lucky draws or providing samples, we can also engage visitors to our site in many ways, this is what we refer to as “smartsites”. A “smartsite” goes beyond the frontend of the store, it can help with customer loyalty programs, inventory management, even profit and loss reporting.
 
 3 key benefits of upgrading to a “smartsite”
